@@ -28,6 +28,28 @@
 
   <!-- ✅ Google reCAPTCHA -->
   <script src="https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY" async defer></script>
+
+  <!-- ✅ Structured Data for Google (Schema.org Bakery) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "Daug's Desserts",
+    "url": "https://daugsdesserts.netlify.app",
+    "image": "https://daugsdesserts.netlify.app/images/logo.png",
+    "servesCuisine": "Desserts",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Atlanta",
+      "addressRegion": "GA"
+    },
+    "sameAs": [
+      "https://www.instagram.com/daugsdesserts",
+      "https://www.facebook.com/daugsdesserts"
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -35,31 +57,26 @@
   <header class="header">
     <div class="container">
       <div class="header-content">
-        <!-- Left: Order Button -->
         <div class="header-left">
           <button class="btn-order">ONLINE ORDER</button>
         </div>
-
-        <!-- Center: Logo -->
         <div class="header-center">
           <a href="/" class="logo">
             <div class="logo-main">Daug's</div>
             <div class="logo-sub">DESSERTS</div>
           </a>
         </div>
-
-        <!-- Right: Nav Links -->
         <nav class="header-right">
-          <a href="#" class="nav-link">LOCATIONS</a>
-          <a href="#" class="nav-link">ABOUT</a>
-          <a href="#" class="nav-link">MENU</a>
+          <a href="#locations" class="nav-link">LOCATIONS</a>
+          <a href="#about" class="nav-link">ABOUT</a>
+          <a href="#menu" class="nav-link">MENU</a>
         </nav>
       </div>
     </div>
   </header>
 
   <!-- ================= HERO ================= -->
-  <section class="hero">
+  <section class="hero" id="menu">
     <div class="container">
       <h1 class="hero-title">BOX OF THE BEST</h1>
       <p class="hero-subtitle">Fresh, handcrafted cookies baked with love.</p>
@@ -89,33 +106,25 @@
     <div class="container">
       <h2 class="section-title">DAILY FLAVORS</h2>
       <div class="flavors-grid">
-        <div class="flavor-item">
-          <div class="flavor-image">
-            <div class="donut-placeholder"></div>
-          </div>
+        <a href="cookies/butter-salt.html" class="flavor-item">
+          <img src="images/butter-salt.webp" alt="Butter & Salt" loading="lazy" width="400" height="400" />
           <h3 class="flavor-name">Butter & Salt</h3>
-        </div>
+        </a>
 
-        <div class="flavor-item">
-          <div class="flavor-image">
-            <div class="donut-placeholder"></div>
-          </div>
+        <a href="cookies/chocolate-chunk.html" class="flavor-item">
+          <img src="images/chocolate-chunk.webp" alt="Chocolate Chunk" loading="lazy" width="400" height="400" />
           <h3 class="flavor-name">Chocolate Chunk</h3>
-        </div>
+        </a>
 
-        <div class="flavor-item">
-          <div class="flavor-image">
-            <div class="donut-placeholder"></div>
-          </div>
+        <a href="cookies/peanut-butter-dream.html" class="flavor-item">
+          <img src="images/peanut-butter-dream.webp" alt="Peanut Butter Dream" loading="lazy" width="400" height="400" />
           <h3 class="flavor-name">Peanut Butter Dream</h3>
-        </div>
+        </a>
 
-        <div class="flavor-item">
-          <div class="flavor-image">
-            <div class="donut-placeholder"></div>
-          </div>
+        <a href="cookies/strawberry-shortcake.html" class="flavor-item">
+          <img src="images/strawberry-shortcake.webp" alt="Strawberry Shortcake" loading="lazy" width="400" height="400" />
           <h3 class="flavor-name">Strawberry Shortcake</h3>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -126,47 +135,19 @@
       <h2 class="section-title">SEASONAL FLAVORS</h2>
       <div class="flavors-grid">
         <div class="flavor-item">
-          <div class="flavor-image">
-            <div class="donut-placeholder"></div>
-          </div>
+          <div class="donut-placeholder"></div>
           <h3 class="flavor-name">Pumpkin Spice</h3>
         </div>
-
         <div class="flavor-item">
-          <div class="flavor-image">
-            <div class="donut-placeholder"></div>
-          </div>
+          <div class="donut-placeholder"></div>
           <h3 class="flavor-name">Caramel Apple</h3>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= SPECIALTY FLAVORS ================= -->
-  <section class="flavors-section specialty">
-    <div class="container">
-      <h2 class="section-title">SPECIALTY FLAVORS</h2>
-      <p class="section-subtitle">Available at select locations</p>
-      <div class="flavors-grid">
-        <div class="flavor-item">
-          <div class="flavor-image">
-            <div class="donut-placeholder"></div>
-          </div>
-          <h3 class="flavor-name">Matcha Green Tea</h3>
-        </div>
-
-        <div class="flavor-item">
-          <div class="flavor-image">
-            <div class="donut-placeholder"></div>
-          </div>
-          <h3 class="flavor-name">Lavender Honey</h3>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ================= FOOTER ================= -->
-  <footer class="footer">
+  <footer class="footer" id="about">
     <div class="container">
       <p>© 2025 Daug's Desserts. Crafted with ❤️ in Georgia.</p>
     </div>
