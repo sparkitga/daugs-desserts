@@ -1,5 +1,27 @@
 /*
+  # --- Core security headers ---
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: same-origin
+
+  # --- Content Security Policy (CSP) ---
+  Content-Security-Policy:
+    default-src 'self';
+    script-src 'self'
+      https://js.stripe.com
+      https://cdn.zapier.com
+      https://www.googletagmanager.com
+      https://www.google-analytics.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    img-src 'self' data: https://www.google-analytics.com;
+    font-src 'self' https://fonts.gstatic.com;
+    connect-src 'self'
+      https://api.stripe.com
+      https://hooks.zapier.com
+      https://www.google-analytics.com;
+    frame-src https://js.stripe.com;
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    upgrade-insecure-requests;
