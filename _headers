@@ -1,5 +1,5 @@
 /*
-  # --- Core security headers ---
+  # --- Core Security Headers ---
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
