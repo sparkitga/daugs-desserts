@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daug's Desserts – Box of the Best</title>
+  <meta name="description" content="Atlanta's favorite cookie bakery — Daug’s Desserts. Fresh, handcrafted cookies baked with love." />
+<meta property="og:title" content="Daug's Desserts – Box of the Best" />
+<meta property="og:description" content="Handcrafted cookies made in Atlanta. Order your box of the best today!" />
+<meta property="og:image" content="https://daugsdesserts.netlify.app/images/hero.webp" />
+<meta property="og:url" content="https://daugsdesserts.netlify.app" />
+<meta name="twitter:card" content="summary_large_image" />
+
+
+  <!-- 🔹 Performance & Font Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet"
+    media="print"
+    onload="this.media='all'"
+  />
+
+  <!-- 🔹 Preload Hero Image -->
+  <link rel="preload" as="image" href="images/hero.webp" type="image/webp" />
+
+  <!-- 🔹 Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- ✅ Google reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY" async defer></script>
+
+  <!-- ✅ Structured Data for Google (Schema.org Bakery) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "Daug's Desserts",
+    "url": "https://daugsdesserts.netlify.app",
+    "image": "https://daugsdesserts.netlify.app/images/logo.png",
+    "servesCuisine": "Desserts",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Atlanta",
+      "addressRegion": "GA"
+    },
+    "sameAs": [
+      "https://www.instagram.com/daugsdesserts",
+      "https://www.facebook.com/daugsdesserts"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="header-left">
+          <button class="btn-order">ONLINE ORDER</button>
+        </div>
+        <div class="header-center">
+          <a href="/" class="logo">
+            <div class="logo-main">Daug's</div>
+            <div class="logo-sub">DESSERTS</div>
+          </a>
+        </div>
+        <nav class="header-right">
+          <a href="#locations" class="nav-link">LOCATIONS</a>
+          <a href="#about" class="nav-link">ABOUT</a>
+          <a href="#menu" class="nav-link">MENU</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="menu">
+    <div class="container">
+      <h1 class="hero-title">BOX OF THE BEST</h1>
+      <p class="hero-subtitle">Fresh, handcrafted cookies baked with love.</p>
+      <img
+        src="images/hero.webp"
+        alt="Fresh Daug's cookies"
+        width="800"
+        height="400"
+        class="hero-img"
+        loading="eager"
+      />
+    </div>
+  </section>
+
+  <!-- ================= PACK SELECTOR ================= -->
+  <section class="pack-selector">
+    <div class="container">
+      <div class="pack-buttons">
+        <button class="pack-btn active">6 PACK</button>
+        <button class="pack-btn">12 PACK</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DAILY FLAVORS ================= -->
+  <section class="flavors-section">
+    <div class="container">
+      <h2 class="section-title">DAILY FLAVORS</h2>
+      <div class="flavors-grid">
+        <a href="cookies/butter-salt.html" class="flavor-item">
+          <img src="images/butter-salt.webp" alt="Butter & Salt" loading="lazy" width="400" height="400" />
+          <h3 class="flavor-name">Butter & Salt</h3>
+        </a>
+
+        <a href="cookies/chocolate-chunk.html" class="flavor-item">
+          <img src="images/chocolate-chunk.webp" alt="Chocolate Chunk" loading="lazy" width="400" height="400" />
+          <h3 class="flavor-name">Chocolate Chunk</h3>
+        </a>
+
+        <a href="cookies/peanut-butter-dream.html" class="flavor-item">
+          <img src="images/peanut-butter-dream.webp" alt="Peanut Butter Dream" loading="lazy" width="400" height="400" />
+          <h3 class="flavor-name">Peanut Butter Dream</h3>
+        </a>
+
+        <a href="cookies/strawberry-shortcake.html" class="flavor-item">
+          <img src="images/strawberry-shortcake.webp" alt="Strawberry Shortcake" loading="lazy" width="400" height="400" />
+          <h3 class="flavor-name">Strawberry Shortcake</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SEASONAL FLAVORS ================= -->
+  <section class="flavors-section seasonal">
+    <div class="container">
+      <h2 class="section-title">SEASONAL FLAVORS</h2>
+      <div class="flavors-grid">
+        <div class="flavor-item">
+          <div class="donut-placeholder"></div>
+          <h3 class="flavor-name">Pumpkin Spice</h3>
+        </div>
+        <div class="flavor-item">
+          <div class="donut-placeholder"></div>
+          <h3 class="flavor-name">Caramel Apple</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer" id="about">
+    <div class="container">
+      <p>© 2025 Daug's Desserts. Crafted with ❤️ in Georgia.</p>
+    </div>
+  </footer>
+
+  <!-- ✅ Async/Defer JS for faster load -->
+  <script src="script.js" defer></script>
+</body>
+</html>
