@@ -279,3 +279,47 @@ body {
     font-size: 1.75rem;
   }
 }
+
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sticky navigation */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+  background-color: rgba(245, 243, 237, 0.95);
+  transition: background-color 0.3s ease;
+}
+
+/* Skeleton loader for donut placeholders */
+.donut-placeholder {
+  animation: pulse 1.5s infinite ease-in-out;
+  background: linear-gradient(90deg, #d4c5a0 25%, #e5d9b5 50%, #d4c5a0 75%);
+  background-size: 400% 100%;
+}
+
+@keyframes pulse {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+/* Hover motion for buttons */
+.btn-order,
+.pack-btn {
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.btn-order:hover,
+.pack-btn:hover {
+  transform: translateY(-2px);
+}
+

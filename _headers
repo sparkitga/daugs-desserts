@@ -25,3 +25,8 @@
     base-uri 'self';
     form-action 'self';
     upgrade-insecure-requests;
+
+  # --- Delivery Optimization ---
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Encoding: gzip
+  Vary: Accept-Encoding

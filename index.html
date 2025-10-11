@@ -3,342 +3,176 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sidecar Doughnuts - Menu</title>
+  <title>Daug's Desserts – Box of the Best</title>
 
-  <!-- Google Fonts -->
+  <!-- 🔹 Performance & Font Optimization -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+  />
+  <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
     rel="stylesheet"
+    media="print"
+    onload="this.media='all'"
   />
 
-  <!-- Your CSS -->
+  <!-- 🔹 Preload Hero Image -->
+  <link rel="preload" as="image" href="images/hero.webp" type="image/webp" />
+
+  <!-- 🔹 Styles -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- ✅ Add this reCAPTCHA v3 script -->
-  <script src="https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY"></script>
+  <!-- ✅ Google reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY" async defer></script>
 </head>
+
 <body>
-     Header 
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                 Left side - Online Order button 
-                <div class="header-left">
-                    <button class="btn-order">ONLINE ORDER</button>
-                </div>
-
-                 Center - Logo 
-                <div class="header-center">
-                    <a href="/" class="logo">
-                        <div class="logo-main">Sidecar</div>
-                        <div class="logo-sub">DOUGHNUTS & COFFEE</div>
-                    </a>
-                </div>
-
-                 Right side - Navigation 
-                <nav class="header-right">
-                    <a href="#" class="nav-link">LOCATIONS</a>
-                    <a href="#" class="nav-link">ABOUT</a>
-                    <a href="#" class="nav-link">MENU</a>
-                </nav>
-            </div>
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <!-- Left: Order Button -->
+        <div class="header-left">
+          <button class="btn-order">ONLINE ORDER</button>
         </div>
-    </header>
 
-     Main Content 
-    <main>
-         Hero Section 
-        <section class="hero">
-            <h1 class="hero-title">BOX OF THE BEST</h1>
-        </section>
+        <!-- Center: Logo -->
+        <div class="header-center">
+          <a href="/" class="logo">
+            <div class="logo-main">Daug's</div>
+            <div class="logo-sub">DESSERTS</div>
+          </a>
+        </div>
 
-         Pack Selector 
-        <section class="pack-selector">
-            <div class="container">
-                <div class="pack-buttons">
-                    <button class="pack-btn active">6 PACK</button>
-                    <button class="pack-btn">12 PACK</button>
-                </div>
-            </div>
-        </section>
+        <!-- Right: Nav Links -->
+        <nav class="header-right">
+          <a href="#" class="nav-link">LOCATIONS</a>
+          <a href="#" class="nav-link">ABOUT</a>
+          <a href="#" class="nav-link">MENU</a>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-         Daily Flavors 
-        <section class="flavors-section">
-            <div class="container">
-                <h2 class="section-title">DAILY FLAVORS</h2>
-                <div class="flavors-grid">
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                            <div class="check-badge">
-                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="flavor-name">SCREAMS BY SPRINKLES</h3>
-                    </div>
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">BOX OF THE BEST</h1>
+      <p class="hero-subtitle">Fresh, handcrafted cookies baked with love.</p>
+      <img
+        src="images/hero.webp"
+        alt="Fresh Daug's cookies"
+        width="800"
+        height="400"
+        class="hero-img"
+        loading="eager"
+      />
+    </div>
+  </section>
 
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                            <div class="check-badge">
-                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="flavor-name">WHITE CHOCOLATE BANANA BREAD</h3>
-                    </div>
+  <!-- ================= PACK SELECTOR ================= -->
+  <section class="pack-selector">
+    <div class="container">
+      <div class="pack-buttons">
+        <button class="pack-btn active">6 PACK</button>
+        <button class="pack-btn">12 PACK</button>
+      </div>
+    </div>
+  </section>
 
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                            <div class="check-badge">
-                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="flavor-name">COOKIES & CRÈME</h3>
-                    </div>
+  <!-- ================= DAILY FLAVORS ================= -->
+  <section class="flavors-section">
+    <div class="container">
+      <h2 class="section-title">DAILY FLAVORS</h2>
+      <div class="flavors-grid">
+        <div class="flavor-item">
+          <div class="flavor-image">
+            <div class="donut-placeholder"></div>
+          </div>
+          <h3 class="flavor-name">Butter & Salt</h3>
+        </div>
 
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                            <div class="check-badge">
-                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="flavor-name">STRAWBERRY BUTTERMILK</h3>
-                    </div>
+        <div class="flavor-item">
+          <div class="flavor-image">
+            <div class="donut-placeholder"></div>
+          </div>
+          <h3 class="flavor-name">Chocolate Chunk</h3>
+        </div>
 
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                            <div class="check-badge">
-                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="flavor-name">BUTTER & SALT</h3>
-                    </div>
+        <div class="flavor-item">
+          <div class="flavor-image">
+            <div class="donut-placeholder"></div>
+          </div>
+          <h3 class="flavor-name">Peanut Butter Dream</h3>
+        </div>
 
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                            <div class="check-badge">
-                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="flavor-name">OLD FASHION</h3>
-                    </div>
+        <div class="flavor-item">
+          <div class="flavor-image">
+            <div class="donut-placeholder"></div>
+          </div>
+          <h3 class="flavor-name">Strawberry Shortcake</h3>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                            <div class="check-badge">
-                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="flavor-name">HUCKLEBERRY</h3>
-                    </div>
+  <!-- ================= SEASONAL FLAVORS ================= -->
+  <section class="flavors-section seasonal">
+    <div class="container">
+      <h2 class="section-title">SEASONAL FLAVORS</h2>
+      <div class="flavors-grid">
+        <div class="flavor-item">
+          <div class="flavor-image">
+            <div class="donut-placeholder"></div>
+          </div>
+          <h3 class="flavor-name">Pumpkin Spice</h3>
+        </div>
 
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                            <div class="check-badge">
-                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="flavor-name">SAIGON CINNAMON CRUMB</h3>
-                    </div>
+        <div class="flavor-item">
+          <div class="flavor-image">
+            <div class="donut-placeholder"></div>
+          </div>
+          <h3 class="flavor-name">Caramel Apple</h3>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                            <div class="check-badge">
-                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="flavor-name">MAPLE BACON</h3>
-                    </div>
+  <!-- ================= SPECIALTY FLAVORS ================= -->
+  <section class="flavors-section specialty">
+    <div class="container">
+      <h2 class="section-title">SPECIALTY FLAVORS</h2>
+      <p class="section-subtitle">Available at select locations</p>
+      <div class="flavors-grid">
+        <div class="flavor-item">
+          <div class="flavor-image">
+            <div class="donut-placeholder"></div>
+          </div>
+          <h3 class="flavor-name">Matcha Green Tea</h3>
+        </div>
 
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                            <div class="check-badge">
-                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="flavor-name">VANILLA BEAN GLAZED</h3>
-                    </div>
+        <div class="flavor-item">
+          <div class="flavor-image">
+            <div class="donut-placeholder"></div>
+          </div>
+          <h3 class="flavor-name">Lavender Honey</h3>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                            <div class="check-badge">
-                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="flavor-name">BASIL YUZU BENEDICT</h3>
-                        <p class="flavor-note">(AVAILABLE IN-STORE ONLY)</p>
-                    </div>
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Daug's Desserts. Crafted with ❤️ in Georgia.</p>
+    </div>
+  </footer>
 
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                            <div class="check-badge">
-                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="flavor-name">DROPS</h3>
-                        <p class="flavor-note">(AVAILABLE IN-STORE ONLY)</p>
-                    </div>
-
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                            <div class="check-badge">
-                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="flavor-name">CINNAMON ROLLS</h3>
-                        <p class="flavor-note">(AVAILABLE WEDNESDAY ONLY)</p>
-                    </div>
-
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                            <div class="check-badge">
-                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="flavor-name">APPLE FRITTER</h3>
-                        <p class="flavor-note">(AVAILABLE FRIDAY ONLY)</p>
-                    </div>
-
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                            <div class="check-badge">
-                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="flavor-name">TWISTS</h3>
-                        <p class="flavor-note">(AVAILABLE TUESDAY ONLY)</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-         Seasonal Flavors 
-        <section class="flavors-section seasonal">
-            <div class="container">
-                <h2 class="section-title">SEASONAL FLAVORS</h2>
-                <div class="flavors-grid">
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                            <div class="check-badge">
-                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="flavor-name">PUMPKIN SPICE</h3>
-                    </div>
-
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                            <div class="check-badge">
-                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="flavor-name">APPLE CIDER</h3>
-                    </div>
-
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                            <div class="check-badge">
-                                <svg class="check-icon" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="flavor-name">CARAMEL APPLE</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-         Specialty Flavors 
-        <section class="flavors-section specialty">
-            <div class="container">
-                <h2 class="section-title">SPECIALTY FLAVORS</h2>
-                <p class="section-subtitle">Available at select locations</p>
-                <div class="flavors-grid">
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                        </div>
-                        <h3 class="flavor-name">MATCHA GREEN TEA</h3>
-                    </div>
-
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                        </div>
-                        <h3 class="flavor-name">LAVENDER HONEY</h3>
-                    </div>
-
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                        </div>
-                        <h3 class="flavor-name">ROSE PISTACHIO</h3>
-                    </div>
-
-                    <div class="flavor-item">
-                        <div class="flavor-image">
-                            <div class="donut-placeholder"></div>
-                        </div>
-                        <h3 class="flavor-name">EARL GREY</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <script src="script.js"></script>
+  <!-- ✅ Async/Defer JS for faster load -->
+  <script src="script.js" defer></script>
 </body>
 </html>
