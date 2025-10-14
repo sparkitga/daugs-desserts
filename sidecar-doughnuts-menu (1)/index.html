@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidecar Doughnuts - Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            cream: {
+              50: '#fdfcfb',
+              100: '#faf8f5',
+              200: '#f5f1ea',
+              300: '#ebe4d8',
+            },
+            brown: {
+              600: '#8b6f47',
+              700: '#6b5435',
+              800: '#4a3a24',
+            },
+            gold: {
+              500: '#d4af37',
+              600: '#b8941f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #faf8f5;
+      color: #4a3a24;
+    }
+    
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .scroll-smooth {
+      scroll-behavior: smooth;
+    }
+    
+    .menu-index-link {
+      transition: all 0.3s ease;
+    }
+    
+    .menu-index-link.active {
+      color: #d4af37;
+      font-weight: 600;
+    }
+    
+    .doughnut-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .doughnut-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .pack-option {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .pack-option:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+  </style>
+</head>
+<body class="scroll-smooth">
+  
+   Header 
+  <header class="sticky top-0 z-50 bg-cream-50 border-b border-cream-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center gap-8">
+          <h1 class="font-serif text-3xl font-bold text-brown-800">Sidecar</h1>
+          <nav class="hidden md:flex gap-6">
+            <a href="#" class="text-sm font-medium text-brown-700 hover:text-gold-600 transition-colors">Menu</a>
+            <a href="#" class="text-sm font-medium text-brown-700 hover:text-gold-600 transition-colors">Locations</a>
+            <a href="#" class="text-sm font-medium text-brown-700 hover:text-gold-600 transition-colors">About</a>
+            <a href="#" class="text-sm font-medium text-brown-700 hover:text-gold-600 transition-colors">Catering</a>
+          </nav>
+        </div>
+        <button class="bg-brown-800 text-cream-50 px-6 py-2.5 rounded-full text-sm font-medium hover:bg-brown-700 transition-colors">
+          Order Now
+        </button>
+      </div>
+    </div>
+  </header>
+
+   Menu Index 
+  <div class="sticky top-20 z-40 bg-cream-100 border-b border-cream-300 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="flex gap-8 py-4 overflow-x-auto">
+        <a href="#packs" class="menu-index-link text-sm font-medium text-brown-700 hover:text-gold-600 whitespace-nowrap">
+          Packs
+        </a>
+        <a href="#daily" class="menu-index-link text-sm font-medium text-brown-700 hover:text-gold-600 whitespace-nowrap">
+          Daily Flavors
+        </a>
+        <a href="#seasonal" class="menu-index-link text-sm font-medium text-brown-700 hover:text-gold-600 whitespace-nowrap">
+          Seasonal Flavors
+        </a>
+        <a href="#specialty" class="menu-index-link text-sm font-medium text-brown-700 hover:text-gold-600 whitespace-nowrap">
+          Specialty Options
+        </a>
+      </nav>
+    </div>
+  </div>
+
+   Hero Section 
+  <section class="bg-gradient-to-b from-cream-100 to-cream-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-serif text-5xl md:text-6xl font-bold text-brown-800 mb-4">
+        Box of the Best
+      </h2>
+      <p class="text-lg text-brown-600 max-w-2xl mx-auto leading-relaxed">
+        Handcrafted daily with premium ingredients. Each doughnut is a work of art, 
+        made fresh to bring joy to your day.
+      </p>
+    </div>
+  </section>
+
+   Pack Builder Section 
+  <section id="packs" class="py-16 bg-cream-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-4xl font-bold text-brown-800 mb-3">Build Your Pack</h2>
+        <p class="text-brown-600 text-lg">Choose your perfect assortment</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+         6 Pack 
+        <div class="pack-option bg-white rounded-2xl p-8 border-2 border-cream-300">
+          <div class="text-center mb-6">
+            <div class="inline-block bg-cream-200 rounded-full px-4 py-1 mb-4">
+              <span class="text-sm font-semibold text-brown-700">POPULAR</span>
+            </div>
+            <h3 class="font-serif text-3xl font-bold text-brown-800 mb-2">6 Pack</h3>
+            <p class="text-brown-600">Perfect for sharing</p>
+          </div>
+          <div class="text-center mb-6">
+            <span class="font-serif text-5xl font-bold text-gold-600">$28</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-3 text-brown-700">
+              <svg class="w-5 h-5 text-gold-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Choose any 6 flavors</span>
+            </li>
+            <li class="flex items-center gap-3 text-brown-700">
+              <svg class="w-5 h-5 text-gold-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Signature box packaging</span>
+            </li>
+            <li class="flex items-center gap-3 text-brown-700">
+              <svg class="w-5 h-5 text-gold-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Made fresh daily</span>
+            </li>
+          </ul>
+          <button class="w-full bg-brown-800 text-cream-50 py-3 rounded-full font-medium hover:bg-brown-700 transition-colors">
+            Select 6 Pack
+          </button>
+        </div>
+
+         12 Pack 
+        <div class="pack-option bg-white rounded-2xl p-8 border-2 border-cream-300">
+          <div class="text-center mb-6">
+            <div class="inline-block bg-gold-500 rounded-full px-4 py-1 mb-4">
+              <span class="text-sm font-semibold text-white">BEST VALUE</span>
+            </div>
+            <h3 class="font-serif text-3xl font-bold text-brown-800 mb-2">12 Pack</h3>
+            <p class="text-brown-600">For the true enthusiast</p>
+          </div>
+          <div class="text-center mb-6">
+            <span class="font-serif text-5xl font-bold text-gold-600">$52</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-3 text-brown-700">
+              <svg class="w-5 h-5 text-gold-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Choose any 12 flavors</span>
+            </li>
+            <li class="flex items-center gap-3 text-brown-700">
+              <svg class="w-5 h-5 text-gold-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Signature box packaging</span>
+            </li>
+            <li class="flex items-center gap-3 text-brown-700">
+              <svg class="w-5 h-5 text-gold-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Made fresh daily</span>
+            </li>
+          </ul>
+          <button class="w-full bg-gold-600 text-white py-3 rounded-full font-medium hover:bg-gold-500 transition-colors">
+            Select 12 Pack
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   Daily Flavors Section 
+  <section id="daily" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-4xl font-bold text-brown-800 mb-3">Daily Flavors</h2>
+        <p class="text-brown-600 text-lg">Available every day, all day</p>
+      </div>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+         Huckleberry 
+        <div class="doughnut-card bg-cream-50 rounded-xl overflow-hidden">
+          <div class="aspect-square bg-gradient-to-br from-purple-200 to-purple-300"></div>
+          <div class="p-6">
+            <h3 class="font-serif text-2xl font-semibold text-brown-800 mb-2">Huckleberry</h3>
+            <p class="text-brown-600 leading-relaxed">Vanilla cake doughnut with huckleberry glaze and lemon zest</p>
+          </div>
+        </div>
+
+         Butter & Salt 
+        <div class="doughnut-card bg-cream-50 rounded-xl overflow-hidden">
+          <div class="aspect-square bg-gradient-to-br from-yellow-100 to-amber-200"></div>
+          <div class="p-6">
+            <h3 class="font-serif text-2xl font-semibold text-brown-800 mb-2">Butter & Salt</h3>
+            <p class="text-brown-600 leading-relaxed">Raised doughnut with brown butter glaze and Maldon sea salt</p>
+          </div>
+        </div>
+
+         Saigon Cinnamon Crumb 
+        <div class="doughnut-card bg-cream-50 rounded-xl overflow-hidden">
+          <div class="aspect-square bg-gradient-to-br from-orange-200 to-amber-300"></div>
+          <div class="p-6">
+            <h3 class="font-serif text-2xl font-semibold text-brown-800 mb-2">Saigon Cinnamon Crumb</h3>
+            <p class="text-brown-600 leading-relaxed">Vanilla cake doughnut with cinnamon glaze and crumb topping</p>
+          </div>
+        </div>
+
+         Chocolate Sprinkles 
+        <div class="doughnut-card bg-cream-50 rounded-xl overflow-hidden">
+          <div class="aspect-square bg-gradient-to-br from-amber-800 to-brown-600"></div>
+          <div class="p-6">
+            <h3 class="font-serif text-2xl font-semibold text-brown-800 mb-2">Chocolate Sprinkles</h3>
+            <p class="text-brown-600 leading-relaxed">Chocolate cake doughnut with chocolate glaze and sprinkles</p>
+          </div>
+        </div>
+
+         Vanilla Bean Glazed 
+        <div class="doughnut-card bg-cream-50 rounded-xl overflow-hidden">
+          <div class="aspect-square bg-gradient-to-br from-cream-200 to-yellow-100"></div>
+          <div class="p-6">
+            <h3 class="font-serif text-2xl font-semibold text-brown-800 mb-2">Vanilla Bean Glazed</h3>
+            <p class="text-brown-600 leading-relaxed">Raised doughnut with Madagascar vanilla bean glaze</p>
+          </div>
+        </div>
+
+         Maple Bacon 
+        <div class="doughnut-card bg-cream-50 rounded-xl overflow-hidden">
+          <div class="aspect-square bg-gradient-to-br from-amber-300 to-orange-400"></div>
+          <div class="p-6">
+            <h3 class="font-serif text-2xl font-semibold text-brown-800 mb-2">Maple Bacon</h3>
+            <p class="text-brown-600 leading-relaxed">Raised doughnut with maple glaze and applewood smoked bacon</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   Seasonal Flavors Section 
+  <section id="seasonal" class="py-16 bg-cream-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-4xl font-bold text-brown-800 mb-3">Seasonal Flavors</h2>
+        <p class="text-brown-600 text-lg">Limited time offerings crafted with seasonal ingredients</p>
+      </div>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+         Pumpkin Spice 
+        <div class="doughnut-card bg-white rounded-xl overflow-hidden">
+          <div class="aspect-square bg-gradient-to-br from-orange-300 to-amber-400"></div>
+          <div class="p-6">
+            <h3 class="font-serif text-2xl font-semibold text-brown-800 mb-2">Pumpkin Spice</h3>
+            <p class="text-brown-600 leading-relaxed">Pumpkin cake doughnut with cream cheese frosting and spices</p>
+          </div>
+        </div>
+
+         Apple Cider 
+        <div class="doughnut-card bg-white rounded-xl overflow-hidden">
+          <div class="aspect-square bg-gradient-to-br from-red-200 to-amber-300"></div>
+          <div class="p-6">
+            <h3 class="font-serif text-2xl font-semibold text-brown-800 mb-2">Apple Cider</h3>
+            <p class="text-brown-600 leading-relaxed">Cider-infused cake doughnut with cinnamon sugar coating</p>
+          </div>
+        </div>
+
+         Salted Caramel 
+        <div class="doughnut-card bg-white rounded-xl overflow-hidden">
+          <div class="aspect-square bg-gradient-to-br from-amber-400 to-orange-500"></div>
+          <div class="p-6">
+            <h3 class="font-serif text-2xl font-semibold text-brown-800 mb-2">Salted Caramel</h3>
+            <p class="text-brown-600 leading-relaxed">Vanilla cake with salted caramel glaze and sea salt</p>
+          </div>
+        </div>
+
+         Peppermint Bark 
+        <div class="doughnut-card bg-white rounded-xl overflow-hidden">
+          <div class="aspect-square bg-gradient-to-br from-red-300 to-pink-200"></div>
+          <div class="p-6">
+            <h3 class="font-serif text-2xl font-semibold text-brown-800 mb-2">Peppermint Bark</h3>
+            <p class="text-brown-600 leading-relaxed">Chocolate doughnut with white chocolate and crushed peppermint</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   Specialty Options Section 
+  <section id="specialty" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-4xl font-bold text-brown-800 mb-3">Specialty Options</h2>
+        <p class="text-brown-600 text-lg">Gluten-free and vegan selections</p>
+      </div>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+         GF Chocolate 
+        <div class="doughnut-card bg-cream-50 rounded-xl overflow-hidden">
+          <div class="aspect-square bg-gradient-to-br from-brown-600 to-amber-900"></div>
+          <div class="p-6">
+            <div class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+              GLUTEN-FREE
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-brown-800 mb-2">Chocolate Cake</h3>
+            <p class="text-brown-600 leading-relaxed">Rich chocolate cake doughnut with chocolate glaze</p>
+          </div>
+        </div>
+
+         Vegan Vanilla 
+        <div class="doughnut-card bg-cream-50 rounded-xl overflow-hidden">
+          <div class="aspect-square bg-gradient-to-br from-cream-300 to-yellow-200"></div>
+          <div class="p-6">
+            <div class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+              VEGAN
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-brown-800 mb-2">Vanilla Glazed</h3>
+            <p class="text-brown-600 leading-relaxed">Plant-based vanilla doughnut with vanilla glaze</p>
+          </div>
+        </div>
+
+         GF & Vegan Berry 
+        <div class="doughnut-card bg-cream-50 rounded-xl overflow-hidden">
+          <div class="aspect-square bg-gradient-to-br from-pink-300 to-purple-300"></div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-3">
+              <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
+                GLUTEN-FREE
+              </span>
+              <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">
+                VEGAN
+              </span>
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-brown-800 mb-2">Mixed Berry</h3>
+            <p class="text-brown-600 leading-relaxed">Berry-infused doughnut with berry glaze</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   Footer 
+  <footer class="bg-brown-800 text-cream-100 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="font-serif text-2xl font-bold mb-4">Sidecar</h3>
+          <p class="text-cream-200 text-sm leading-relaxed">
+            Handcrafted doughnuts made fresh daily with premium ingredients.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Menu</h4>
+          <ul class="space-y-2 text-sm text-cream-200">
+            <li><a href="#daily" class="hover:text-gold-500 transition-colors">Daily Flavors</a></li>
+            <li><a href="#seasonal" class="hover:text-gold-500 transition-colors">Seasonal Flavors</a></li>
+            <li><a href="#specialty" class="hover:text-gold-500 transition-colors">Specialty Options</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Company</h4>
+          <ul class="space-y-2 text-sm text-cream-200">
+            <li><a href="#" class="hover:text-gold-500 transition-colors">About Us</a></li>
+            <li><a href="#" class="hover:text-gold-500 transition-colors">Locations</a></li>
+            <li><a href="#" class="hover:text-gold-500 transition-colors">Catering</a></li>
+            <li><a href="#" class="hover:text-gold-500 transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Connect</h4>
+          <ul class="space-y-2 text-sm text-cream-200">
+            <li><a href="#" class="hover:text-gold-500 transition-colors">Instagram</a></li>
+            <li><a href="#" class="hover:text-gold-500 transition-colors">Facebook</a></li>
+            <li><a href="#" class="hover:text-gold-500 transition-colors">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-brown-700 mt-8 pt-8 text-center text-sm text-cream-200">
+        <p>&copy; 2025 Sidecar Doughnuts. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Menu Index Active State
+    const sections = document.querySelectorAll('section[id]');
+    const menuLinks = document.querySelectorAll('.menu-index-link');
+
+    function updateActiveLink() {
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      menuLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveLink);
+    updateActiveLink();
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offset = 160; // Header + menu index height
+          const targetPosition = target.offsetTop - offset;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
