@@ -139,3 +139,46 @@
     @apply bg-background text-foreground;
   }
 }
+
+.menu-section {
+  text-align: center;
+  background-color: #fdfbf9;
+  padding: 4rem 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.menu-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #a38769;
+  letter-spacing: 1px;
+  margin-bottom: 3rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 3rem;
+  justify-items: center;
+}
+
+.menu-item img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.menu-item img:hover {
+  transform: scale(1.05);
+}
+
+.menu-item h3 {
+  font-size: 0.95rem;
+  color: #8b705a;
+  font-weight: 600;
+  margin-top: 1rem;
+  letter-spacing: 1px;
+}
