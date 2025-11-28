@@ -344,24 +344,44 @@
 </script>
 
 <script>
-  const form = document.getElementById('noteForm');
-  const success = document.getElementById('noteSuccess');
+  function showToast() {
+    const toast = document.getElementById("toast");
+    toast.classList.remove("opacity-0");
+    toast.classList.add("opacity-100");
 
-  form.addEventListener('submit', async (e) => {
+    setTimeout(() => {
+      toast.classList.add("opacity-0");
+      toast.classList.remove("opacity-100");
+    }, 2500);
+  }
+
+  // FORM SUBMIT — POST to Apps Script
+  document.getElementById("noteForm").addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const data = new FormData(form);
+    const to = document.getElementById("toField").value;
+    const from = document.getElementById("fromField").value;
+    const message = document.getElementById("messageField").value;
 
     await fetch("https://script.google.com/macros/s/AKfycbwtKzXH8E9ostbvHYXeaFwW57o28gG6ZOm67VDH37WB2-BfVGJhB5s7vrFPfgagiaf9/exec", {
       method: "POST",
-      body: data,
-      mode: "no-cors"
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ to, from, message })
     });
 
-    form.reset();
-    success.classList.remove('hidden');
+    showToast();
+
+    // optional: clear form
+    document.getElementById("noteForm").reset();
   });
 </script>
+
+
+<!-- Toast Notification -->
+<div id="toast"
+     class="fixed bottom-6 right-6 bg-brand-green text-white font-semibold px-5 py-3 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300 z-50">
+  Note saved!
+</div>
 
 
 </body>
