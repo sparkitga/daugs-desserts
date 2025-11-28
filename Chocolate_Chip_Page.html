@@ -197,7 +197,7 @@
     </h2>
 
     <p class="text-brown-700 mb-6">
-      Want to personalize your gift? Add a short note below. We'll print it on the packing slip.
+      Want to personalize your gift? Add a short note below. We'll print and include it in your box.
     </p>
 
     <form id="noteForm" class="space-y-4">
@@ -342,6 +342,27 @@
     }
   });
 </script>
+
+<script>
+  const form = document.getElementById('noteForm');
+  const success = document.getElementById('noteSuccess');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    await fetch("https://script.google.com/macros/s/AKfycbwtKzXH8E9ostbvHYXeaFwW57o28gG6ZOm67VDH37WB2-BfVGJhB5s7vrFPfgagiaf9/exec", {
+      method: "POST",
+      body: data,
+      mode: "no-cors"
+    });
+
+    form.reset();
+    success.classList.remove('hidden');
+  });
+</script>
+
 
 </body>
 </html>
