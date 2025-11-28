@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chocolate Chip Cookie • Daug's Desserts</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              green: '#3c6e47',
+              yellow: '#f3bb41',
+            },
+            cream: {
+              50: '#fdfcfb',
+              100: '#faf8f5',
+            },
+            brown: {
+              700: '#6b5435',
+              800: '#4a3a24',
+            },
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Stripe -->
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
+  <style>
+    /* Allergen Modal Background */
+    .modal-bg {
+      background: rgba(0,0,0,0.55);
+    }
+  </style>
+
+</head>
+<body class="bg-cream-50">
+
+<!-- HEADER (simple for product page) -->
+<header class="bg-brand-green py-4">
+  <div class="max-w-7xl mx-auto px-4 flex items-center justify-between text-white">
+    <a href="/" class="font-serif text-xl font-bold">Daug's Desserts</a>
+    <a href="/#packs" class="header-buy-btn bg-white text-black px-4 py-2 rounded-md font-semibold">Order Now</a>
+  </div>
+</header>
+
+
+<!-- HERO SECTION -->
+<section class="py-16 bg-cream-100 border-b border-cream-300">
+  <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+
+    <!-- Image -->
+    <div>
+      <img src="/images/Chocolate_Chip.webp" alt="Chocolate Chip Cookie"
+           class="rounded-2xl shadow-lg w-full">
+    </div>
+
+    <!-- Text -->
+    <div>
+      <h1 class="font-serif text-5xl font-bold text-brown-800 mb-4">Chocolate Chip</h1>
+      <p class="text-brown-700 text-lg leading-relaxed mb-6">
+        The timeless classic with premium chocolate chips and soft-baked warmth
+        that keeps you reaching for one more bite.
+      </p>
+
+      <div class="flex gap-4">
+
+        <!-- Allergen Button -->
+        <button id="openAllergens"
+          class="px-6 py-3 rounded-md font-semibold bg-brand-yellow text-white hover:opacity-90 transition">
+          Allergens & Ingredients
+        </button>
+
+        <!-- Order Button -->
+        <stripe-buy-button
+          buy-button-id="buy_btn_1SHy8AKFAuivcOklyT4IgNz8"
+          publishable-key="pk_live_51Rhs5MKFAuivcOklpHhwr9JChp241h9VBAiqVp5gEhoauuW90qghYGRUTGcnsVt2L35LWkkpigcceQHOok08jX0w00dwfmnRpJ">
+        </stripe-buy-button>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- MODAL -->
+<div id="allergenModal" class="fixed inset-0 modal-bg hidden items-center justify-center z-50">
+  <div class="bg-white max-w-lg w-full mx-4 p-6 rounded-xl shadow-xl relative">
+
+    <!-- Close -->
+    <button id="closeAllergens" class="absolute top-3 right-4 text-gray-500 text-2xl">&times;</button>
+
+    <h2 class="font-serif text-3xl font-bold text-brown-800 mb-4">Allergens & Ingredients</h2>
+
+    <p class="text-brown-700 leading-relaxed mb-2">
+      <strong>Contains:</strong> Wheat, Eggs, Milk, Soy
+    </p>
+
+    <p class="text-brown-700 leading-relaxed">
+      <strong>Ingredients:</strong> Flour, Butter, Brown Sugar, Eggs, Vanilla,
+      Premium Chocolate Chips, Baking Powder, Salt.
+    </p>
+
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer class="text-white bg-black py-10 border-t-2" style="border-color:#f3bb41;">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <p class="text-sm text-white text-opacity-80">&copy; 2025 Daug's Desserts</p>
+  </div>
+</footer>
+
+
+<!-- MODAL SCRIPT -->
+<script>
+  const modal = document.getElementById('allergenModal');
+  const openBtn = document.getElementById('openAllergens');
+  const closeBtn = document.getElementById('closeAllergens');
+
+  openBtn.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  });
+
+  // Close when clicking outside modal box
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  });
+</script>
+
+</body>
+</html>
