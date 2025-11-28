@@ -4,10 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daug's Desserts</title>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
   <script>
     tailwind.config = {
       theme: {
@@ -39,15 +45,17 @@
   </script>
  
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Stripe once -->
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 
 </head>
 <body class="scroll-smooth">
-  
-  <!-- Updated header to match Crumbl style with brand colors -->
-  <header class="sticky top-0 z-50" 
+
+   <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-brand-green">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
+
         <!-- Left: Hamburger Menu -->
         <button class="flex items-center gap-2 text-white hover:opacity-80 transition-opacity">
           <div class="hamburger">
@@ -57,30 +65,58 @@
           </div>
           <span class="text-sm font-medium">Menu</span>
         </button>
-        
+
         <!-- Center: Logo -->
         <h1 class="absolute left-1/2 transform -translate-x-1/2 font-serif text-2xl font-bold text-white lowercase">
           daug's desserts
         </h1>
-        
-        <!-- Right: Order Now Button -->
-  <script async
-  src="https://js.stripe.com/v3/buy-button.js">
-</script>
 
-<a 
-  href="https://buy.stripe.com/7sY6oA8X51i04cpeyV6sw00" 
-  class="header-buy-btn text-sm font-medium"
->
-  Order Now
-</a>
-
-    </div>
-  </section>
+        <!-- Right: Order Now -->
+        <a 
+          href="https://buy.stripe.com/7sY6oA8X51i04cpeyV6sw00"
+          class="header-buy-btn text-sm font-medium"
+        >
+          Order Now
+        </a>
 
       </div>
     </div>
   </header>
+
+   <!-- MENU INDEX -->
+  <div class="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="flex gap-8 py-4 overflow-x-auto">
+        <a href="#packs" class="menu-index-link text-sm font-medium text-gray-700 hover:text-brand-yellow whitespace-nowrap">
+          Cookie Boxes
+        </a>
+        <a href="#daily" class="menu-index-link text-sm font-medium text-gray-700 hover:text-brand-yellow whitespace-nowrap">
+          Our Cookies
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-b from-cream-100 to-cream-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-serif text-5xl md:text-6xl font-bold text-brown-800 mb-4">
+        Click and Cookie
+      </h2>
+
+      <p class="text-lg text-brown-600 max-w-2xl mx-auto leading-relaxed mb-8">
+        We're trying to prove that cookies make the world a better smelling place, 
+        and we're looking for smiling test subjects. Do you love the way cookies smell? 
+      </p>
+
+      <stripe-buy-button
+        buy-button-id="buy_btn_1SHy8AKFAuivcOklyT4IgNz8"
+        publishable-key="pk_live_51Rhs5MKFAuivcOklpHhwr9JChp241h9VBAiqVp5gEhoauuW90qghYGRUTGcnsVt2L35LWkkpigcceQHOok08jX0w00dwfmnRpJ"
+      >
+      </stripe-buy-button>
+
+    </div>
+  </section>
 
   <!-- Updated menu index with new brand colors -->
   <div class="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
