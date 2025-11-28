@@ -8,6 +8,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -48,44 +49,15 @@
   <!-- Stripe once -->
   <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 
-</head>
-<body class="scroll-smooth">
-
-   <!-- HEADER -->
-  <header class="sticky top-0 z-50 bg-brand-green">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-
-        <!-- Left: Hamburger Menu -->
-        <button class="flex items-center gap-2 text-white hover:opacity-80 transition-opacity">
-          <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <span class="text-sm font-medium">Menu</span>
-        </button>
-
-        <!-- Center: Logo -->
-<h1 class="header-logo absolute left-1/2 transform -translate-x-1/2 text-2xl text-white lowercase">
-
-        <!-- Right: Order Now -->
-        <a 
-          href="https://buy.stripe.com/7sY6oA8X51i04cpeyV6sw00"
-          class="header-buy-btn text-sm font-medium"
-        >
-          Order Now
-        </a>
-
-        <style>
-  /* HEADER BUY BUTTON — white + black */
+  <style>
+  /* ORDER NOW BUTTON */
   .header-buy-btn {
     background-color: #ffffff !important;
     color: #000000 !important;
     padding: 8px 16px;
     border-radius: 6px;
     font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+    font-weight: 800;
     display: inline-block;
   }
 
@@ -93,29 +65,69 @@
     background-color: #f2f2f2 !important;
   }
 
-  /* HEADER LOGO — Poppins or Playfair? update as needed */
+  /* CENTER LOGO — Playfair only */
   .header-logo {
-    font-family: 'Poppins', sans-serif;  
-    font-weight: 700;
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 800 !important;
+    text-transform: lowercase;
     letter-spacing: -0.5px;
+    pointer-events: none; /* keeps it purely visual */
   }
 
-  /* MENU ITEMS — Poppins + clean hover */
-  .menu-index-link {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    transition: color .2s ease;
+  /* MENU BUTTON + NAV LINKS */
+  .menu-index-link,
+  .hamburger span,
+  header button span {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 800;
   }
 
-  .menu-index-link:hover {
-    color: #f3bb41 !important; /* brand yellow */
+  /* Hamburger bar styling (optional clean) */
+  .hamburger span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    margin: 3px 0;
+    background: white;
+    border-radius: 2px;
   }
 </style>
 
+</head>
+<body class="scroll-smooth">
 
-      </div>
+  <!-- HEADER -->
+<header class="sticky top-0 z-50 bg-brand-green">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between h-16">
+
+      <!-- Left: Hamburger Menu -->
+      <button class="flex items-center gap-2 text-white hover:opacity-80 transition-opacity">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <span class="text-sm font-bold font-sans">Menu</span>
+      </button>
+
+      <!-- Center Logo (Playfair only) -->
+      <h1 class="header-logo absolute left-1/2 -translate-x-1/2 text-2xl text-white">
+        Daug's Desserts
+      </h1>
+
+      <!-- Right: Order Now -->
+      <a 
+        href="https://buy.stripe.com/7sY6oA8X51i04cpeyV6sw00"
+        class="header-buy-btn text-sm font-medium"
+      >
+        Order Now
+      </a>
+
     </div>
-  </header>
+  </div>
+</header>
+
 
    <!-- MENU INDEX -->
   <div class="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
