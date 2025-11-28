@@ -123,3 +123,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+.header a,
+.nav a {
+  color: #ffffff !important;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, a, span, button {
+  font-family: "Poppins", sans-serif;
+}
+
+header, header * {
+  font-family: "Poppins", sans-serif !important;
+  color: #ffffff !important;
+}
