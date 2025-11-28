@@ -133,21 +133,4 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button {
   font-family: "Poppins", sans-serif;
 }
 
-header, header * {
-  font-family: "Poppins", sans-serif !important;
-  color: #ffffff !important;
-}
-.header-buy-btn {
-  background-color: #ffffff !important;
-  color: #000000 !important;
-  border: none !important;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-weight: 600;
-}
-.header-buy-btn:hover {
-  background-color: #f2f2f2 !important;
-  color: #000000 !important;
-}
-
 

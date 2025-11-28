@@ -182,3 +182,85 @@
   margin-top: 1rem;
   letter-spacing: 1px;
 }
+/* ============================
+   DAUG'S DESSERTS GLOBAL STYLES
+   ============================ */
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Typography */
+body {
+  font-family: 'Poppins', sans-serif !important;
+  background-color: #faf8f5;
+  color: #4a3a24;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', serif !important;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Header button (white) */
+.header-buy-btn {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+}
+.header-buy-btn:hover {
+  background-color: #f2f2f2 !important;
+}
+
+/* Menu link hover + active */
+.menu-index-link {
+  transition: all 0.3s ease;
+}
+.menu-index-link.active {
+  color: #f3bb41;
+  font-weight: 600;
+}
+
+/* Cards + hover animation */
+.doughnut-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.doughnut-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Pack options */
+.pack-option {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.pack-option:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Hamburger icon */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+.hamburger span {
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  transition: all 0.3s ease;
+}

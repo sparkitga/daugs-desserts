@@ -37,70 +37,7 @@
       }
     }
   </script>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #faf8f5;
-      color: #4a3a24;
-    }
-    
-    .font-serif {
-      font-family: 'Playfair Display', serif;
-    }
-    
-    .scroll-smooth {
-      scroll-behavior: smooth;
-    }
-    
-    .menu-index-link {
-      transition: all 0.3s ease;
-    }
-    
-    .menu-index-link.active {
-      color: #f3bb41;
-      font-weight: 600;
-    }
-    
-    .doughnut-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .doughnut-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-    
-    .pack-option {
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    
-    .pack-option:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    }
-    
-    /* Added hamburger menu icon styles */
-    .hamburger {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      cursor: pointer;
-    }
-    
-    .hamburger span {
-      width: 20px;
-      height: 2px;
-      background-color: white;
-      transition: all 0.3s ease;
-    }
-  </style>
+ 
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -108,7 +45,7 @@
 <body class="scroll-smooth">
   
   <!-- Updated header to match Crumbl style with brand colors -->
-  <header class="sticky top-0 z-50" style="background-color: #3c6e47;">
+  <header class="sticky top-0 z-50" 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <!-- Left: Hamburger Menu -->
@@ -193,30 +130,30 @@
         <!-- 6 Pack -->
         <div class="pack-option bg-white rounded-2xl p-8 border-2 border-cream-300">
           <div class="text-center mb-6">
-            <div class="inline-block rounded-full px-4 py-1 mb-4" style="background-color: #f3bb41;">
+            <div class="inline-block rounded-full px-4 py-1 mb-4"">
               <span class="text-sm font-semibold text-white">FAMILY FAVORITE</span>
             </div>
             <h3 class="font-serif text-3xl font-bold text-brown-800 mb-2">Assorted Cookies</h3>
             <p class="text-brown-600">12 Assorted Cookies Picked for You</p>
           </div>
           <div class="text-center mb-6">
-            <span class="font-serif text-5xl font-bold" style="color: #f3bb41;">$24</span>
+            <span class="font-serif text-5xl font-bold"">$24</span>
           </div>
           <ul class="space-y-3 mb-8">
             <li class="flex items-center gap-3 text-brown-700">
-              <svg class="w-5 h-5" style="color: #f3bb41;" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
               <span>12 Signature Cookies</span>
             </li>
             <li class="flex items-center gap-3 text-brown-700">
-              <svg class="w-5 h-5" style="color: #f3bb41;" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
               <span>Signature Boxes</span>
             </li>
             <li class="flex items-center gap-3 text-brown-700">
-              <svg class="w-5 h-5" style="color: #f3bb41;" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
               <span>Shipped With Love</span>
@@ -236,36 +173,36 @@
         <!-- 12 Pack -->
         <div class="pack-option bg-white rounded-2xl p-8 border-2 border-cream-300">
           <div class="text-center mb-6">
-            <div class="inline-block rounded-full px-4 py-1 mb-4" style="background-color: #f3bb41;">
+            <div class="inline-block rounded-full px-4 py-1 mb-4">
               <span class="text-sm font-semibold text-white">Mix and Match!</span>
             </div>
             <h3 class="font-serif text-3xl font-bold text-brown-800 mb-2">Your Box. Your Choice.</h3>
             <p class="text-brown-600">For the Super Fan</p>
           </div>
           <div class="text-center mb-6">
-            <span class="font-serif text-5xl font-bold" style="color: #f3bb41;">$52</span>
+            <span class="font-serif text-5xl font-bold">$52</span>
           </div>
           <ul class="space-y-3 mb-8">
             <li class="flex items-center gap-3 text-brown-700">
-              <svg class="w-5 h-5" style="color: #f3bb41;" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
               <span>Instant Euphoria</span>
             </li>
             <li class="flex items-center gap-3 text-brown-700">
-              <svg class="w-5 h-5" style="color: #f3bb41;" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
               <span>Make Everyone Happy</span>
             </li>
             <li class="flex items-center gap-3 text-brown-700">
-              <svg class="w-5 h-5" style="color: #f3bb41;" fill="currentColor" viewBox="0 0 20 20">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
               <span>Enter Our Raffle for a Free Box</span>
             </li>
           </ul>
-          <button class="w-full text-white py-3 rounded-full font-medium transition-colors" style="background-color: #f3bb41;" onmouseover="this.style.backgroundColor='#e0a830'" onmouseout="this.style.backgroundColor='#f3bb41'">
+          <button class="w-full text-white py-3 rounded-full font-medium transition-colors" onmouseover="this.style.backgroundColor='#e0a830'" onmouseout="this.style.backgroundColor='#f3bb41'">
               <script async
   src="https://js.stripe.com/v3/buy-button.js">
 </script>
@@ -379,7 +316,7 @@
 
 
   <!-- Footer -->
-  <footer class="text-cream-100 py-12" style="background-color: #000000;">
+  <footer class="text-cream-100 py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-4 gap-8">
         <div>
