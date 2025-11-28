@@ -154,10 +154,19 @@
         </button>
 
         <!-- Order Button -->
-        <stripe-buy-button
-          buy-button-id="buy_btn_1SHy8AKFAuivcOklyT4IgNz8"
-          publishable-key="pk_live_51Rhs5MKFAuivcOklpHhwr9JChp241h9VBAiqVp5gEhoauuW90qghYGRUTGcnsVt2L35LWkkpigcceQHOok08jX0w00dwfmnRpJ">
-        </stripe-buy-button>
+<!-- Styled Order Button Wrapper -->
+<button id="fakeStripeBtn"
+  class="px-6 py-3 rounded-md font-semibold bg-brand-yellow text-white hover:opacity-90 transition">
+  Order This Box
+</button>
+
+<!-- Hidden Stripe Button Trigger -->
+<div id="realStripeBtn" class="hidden">
+  <stripe-buy-button
+    buy-button-id="buy_btn_1SHy8AKFAuivcOklyT4IgNz8"
+    publishable-key="pk_live_51Rhs5MKFAuivcOklpHhwr9JChp241h9VBAiqVp5gEhoauuW90qghYGRUTGcnsVt2L35LWkkpigcceQHOok08jX0w00dwfmnRpJ">
+  </stripe-buy-button>
+</div>
 
       </div>
     </div>
