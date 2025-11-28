@@ -392,6 +392,14 @@
   Note saved!
 </div>
 
+<script>
+  document.getElementById("fakeStripeBtn").addEventListener("click", () => {
+    const real = document.querySelector("#realStripeBtn stripe-buy-button");
+    real.shadowRoot.querySelector("button").click();
+  });
+</script>
+
+
 
 </body>
 </html>
