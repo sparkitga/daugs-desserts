@@ -3,14 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daug's Desserts</title>
+  <title>Daug's Desserts • Terms & Conditions</title>
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -20,8 +16,8 @@
       theme: {
         extend: {
           fontFamily: {
-            serif: ['Poppins', 'sans-serif'],
-            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Poppins', 'sans-serif'],
           },
           colors: {
             brand: {
@@ -31,11 +27,8 @@
             cream: {
               50: '#fdfcfb',
               100: '#faf8f5',
-              200: '#f5f1ea',
-              300: '#ebe4d8',
             },
             brown: {
-              600: '#8b6f47',
               700: '#6b5435',
               800: '#4a3a24',
             },
@@ -44,93 +37,48 @@
       }
     }
   </script>
- 
-
-  <!-- Stripe once -->
-  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 
   <style>
-  /* ORDER NOW BUTTON */
-  .header-buy-btn {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-    display: inline-block;
-  }
-
-  .header-buy-btn:hover {
-    background-color: #f2f2f2 !important;
-  }
-
-  /* CENTER LOGO — Playfair only */
-.header-logo {
-  font-family: 'Playfair Display', serif !important;
-  font-weight: 800 !important;
-  text-transform: lowercase;
-  letter-spacing: -0.5px;
-}
-  /* MENU BUTTON + NAV LINKS */
-  .menu-index-link,
-  .hamburger span,
-  header button span {
-    font-family: 'Poppins', sans-serif !important;
-    font-weight: 800;
-  }
-
-  /* Hamburger bar styling (optional clean) */
-  .hamburger span {
-    display: block;
-    width: 18px;
-    height: 2px;
-    margin: 3px 0;
-    background: white;
-    border-radius: 2px;
-  }
-</style>
-
-<style>
-.doughnut-card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.group:hover .doughnut-card {
-  transform: scale(1.05);
-  box-shadow: 0 12px 22px rgba(0,0,0,0.08);
-}
-</style>
-
+    .header-buy-btn {
+      background-color: #ffffff !important;
+      color: #000 !important;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 800;
+    }
+    .header-logo {
+      font-family: 'Playfair Display', serif !important;
+      font-weight: 800;
+      text-transform: lowercase;
+    }
+    .hamburger span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      margin: 3px 0;
+      background: white;
+      border-radius: 2px;
+    }
+  </style>
 </head>
-<body class="scroll-smooth">
 
-  <!-- HEADER -->
+<body class="scroll-smooth bg-cream-50">
+
+<!-- HEADER -->
 <header class="sticky top-0 z-50 bg-brand-green">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="relative flex items-center justify-between h-16">
 
-      <!-- Left: Hamburger Menu -->
-      <button class="flex items-center gap-2 text-white hover:opacity-80 transition-opacity">
+      <button class="flex items-center gap-2 text-white hover:opacity-80">
         <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </div>
-        <span class="text-sm font-bold font-sans">Menu</span>
+        <span class="text-sm font-bold">Menu</span>
       </button>
 
-      <!-- Center Logo (Playfair only) -->
-<a href="index.html"
-   class="header-logo absolute left-1/2 -translate-x-1/2 text-2xl text-white">
-  Daug's Desserts
-</a>
+      <a href="index.html" class="header-logo absolute left-1/2 -translate-x-1/2 text-2xl text-white">Daug's Desserts</a>
 
-      <!-- Right: Order Now -->
-      <a 
-        href="https://buy.stripe.com/eVqeV6c9h2m48sF0I56sw07"
-        class="header-buy-btn text-sm font-medium"
-      >
+      <a href="https://buy.stripe.com/eVqeV6c9h2m48sF0I56sw07" class="header-buy-btn text-sm font-medium">
         Order Now
       </a>
 
@@ -138,241 +86,148 @@
   </div>
 </header>
 
-
-   <!-- MENU INDEX -->
-  <div class="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <nav class="flex gap-8 py-4 overflow-x-auto">
-        <a href="#packs" class="menu-index-link text-sm font-medium text-gray-700 hover:text-brand-yellow whitespace-nowrap">
-          Cookie Boxes
-        </a>
-        <a href="#daily" class="menu-index-link text-sm font-medium text-gray-700 hover:text-brand-yellow whitespace-nowrap">
-          Our Cookies
-        </a>
-      </nav>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <section class="bg-gradient-to-b from-cream-100 to-cream-50 py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-serif text-5xl md:text-6xl font-bold text-brown-800 mb-4">
-        Daug's Desserts' Terms & Conditions
-      </h2>
-
-      <p class="text-lg text-brown-600 max-w-2xl mx-auto leading-relaxed mb-8">
-Last Updated: November 2025
-
-1. Overview
-
-By placing an order with Daug’s Desserts, you agree to the Terms & Conditions below. These terms apply to all baked goods, gift orders, deliveries, online forms, and any services we provide through our website or Google-powered tools.
-
-2. Orders, Payment & Processing
-
-• All orders are processed through Stripe, our secure payment processor.
-• Orders are baked and packaged in small batches.
-• Once an order is placed, it cannot be changed, refunded, or canceled due to the perishable nature of baked goods.
-
-3. No Returns or Refunds
-
-Because all baked goods are handmade, perishable, and temperature-sensitive, Daug’s Desserts does not accept returns or issue refunds.
-
-This includes situations such as:
-
-• You no longer want the order
-• Taste preference concerns
-• Incorrect address provided by customer
-• Delivery delays caused by the carrier
-• Items damaged due to heat, weather, or mishandling after delivery
-
-If something is genuinely wrong with your order, email us and we will always review concerns on a case-by-case basis — but refunds should not be expected.
-
-4. Complaints & Feedback Policy
-
-We value your feedback and love hearing how we can make your experience sweeter.
-
-However:
-
-• Our recipes, processes, and offerings may change slowly and thoughtfully.
-• Submitting feedback does not guarantee a change in product, menu, policy, or service.
-• Feedback will be reviewed internally, and we will use it to improve over time.
-
-We are a small business and appreciate your patience and kindness.
-
-5. Allergen Notice & Liability Disclaimer
-
-Our baked goods may contain or come into contact with:
-
-Wheat, Eggs, Dairy, Soy, Peanuts, Tree Nuts, Cocoa, Oats, and other allergens.
-
-Because all products are made in the same kitchen:
-
-We cannot guarantee that any product is allergen-free.
-By purchasing, you agree that Daug’s Desserts is not responsible for:
-
-• Any allergic reaction
-• Cross-contact or trace allergens
-• Health complications resulting from consuming our products
-• Misunderstanding or misreading ingredients
-• Custom notes requesting “allergen-free” items
-
-We provide ingredient lists for transparency, but customers are responsible for reviewing ingredients before ordering.
-
-If you or the recipient has a severe allergy:
-WE DO NOT RECOMMEND consuming our products.
-
-6. Shipping, Delivery & Address Accuracy
-
-By placing an order, you acknowledge:
-
-• Delivery dates are not guaranteed. (Weather, holidays, and carriers may cause delays.)
-• Daug’s Desserts is not responsible for delivery delays once the package has been handed to the carrier.
-• We are not liable for late deliveries that affect freshness, gifts, or event timing.
-• You are responsible for entering the correct shipping address.
-• Orders delivered to an incorrect address provided by the customer cannot be replaced or refunded.
-• Packages damaged by heat, handling, theft, or weather after delivery are not eligible for replacement.
-
-We do our best to package products securely — but once shipped, the carrier is responsible for delivery conditions.
-
-7. Use of Google Services
-
-Daug’s Desserts uses:
-
-• Google Forms
-• Google Sheets
-• Google Analytics
-• Gmail
-• Google Drive
-
-By submitting an order or custom note, you acknowledge that your information is processed through Google’s systems.
-We do not control Google’s internal security policies, but we use their standard encrypted services.
-
-8. Gift Notes & Customer Messages
-
-Custom notes (To/From/Message) submitted through our site:
-
-• Are printed exactly as entered
-• Cannot be edited after submission
-• Must not contain inappropriate content
-• Are the customer’s responsibility to review before sending
-
-We reserve the right to remove messages we consider harmful or unsafe.
-
-9. Limitation of Liability
-
-To the fullest extent permitted by law:
-
-Daug’s Desserts is not liable for:
-
-• Allergic reactions or health issues
-• Damage caused by shipping carriers
-• Delivery delays
-• Incorrect addresses
-• Customer errors during ordering
-• Loss, theft, or spoilage after delivery
-• Results of consuming or gifting baked goods
-• Any indirect, incidental, or consequential damages
-
-Our total liability, if ever required, is limited to the cost of the original order and only in scenarios where we are directly at fault.
-
-10. Policy Updates
-
-We may update these Terms & Conditions at any time.
-Updates will be posted on our website and apply immediately to all orders moving forward.
-
-11. Contact Us
-
-Questions about these terms can be sent to:
-daugsdessertsmarketing@gmail.com
-Canton, Georgia
-
-We typically respond within 48 hours. Thanks for smiling with us!
-      </p>
-
-
-    </div>
-  </section>
-
-
-
-
-<!-- Footer -->
-<footer class="text-cream-100 py-12 bg-black border-t-2" style="border-color:#f3bb41;">
+<!-- MENU INDEX -->
+<div class="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="flex gap-8 py-4 overflow-x-auto text-sm font-medium text-gray-700">
+      <a href="#packs" class="hover:text-brand-yellow whitespace-nowrap">Cookie Boxes</a>
+      <a href="#daily" class="hover:text-brand-yellow whitespace-nowrap">Our Cookies</a>
+    </nav>
+  </div>
+</div>
 
-<div class="grid grid-cols-1 md:grid-cols-5 gap-12">
+<!-- TERMS HERO -->
+<section class="bg-gradient-to-b from-cream-100 to-cream-50 py-16">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
+    <h1 class="font-serif text-5xl font-bold text-brown-800 text-center mb-6">
+      Terms & Conditions
+    </h1>
+
+    <p class="text-brown-700 text-center mb-12 text-lg">Last Updated: November 2025</p>
+
+    <!-- TERMS CONTENT -->
+    <div class="space-y-12 text-brown-800 leading-relaxed">
+
+      <!-- 1 -->
       <div>
-        <h3 class="font-serif text-2xl font-bold mb-4">Daug's Desserts</h3>
-        <p class="text-white text-opacity-90 text-sm leading-relaxed">
-          We love seeing you smile with us. Message us your pictures to enter our raffle for a free box of cookies! @daugsdesserts
+        <h3 class="font-serif text-2xl font-bold mb-3">1. Overview</h3>
+        <p>
+          By placing an order with Daug’s Desserts, you agree to the Terms & Conditions below. These apply to all baked goods, gift orders, deliveries, custom notes, and any services provided through our website or Google-powered tools.
         </p>
       </div>
 
+      <!-- 2 -->
       <div>
-        <h4 class="font-semibold mb-4">Smile With Us</h4>
-        <ul class="space-y-2 text-sm text-white text-opacity-90">
-          <li><a href="#daily" class="hover:opacity-80 transition-opacity">Cookie Flavors</a></li>
-          <li><a href="#packs" class="hover:opacity-80 transition-opacity">Build Your Box</a></li>
+        <h3 class="font-serif text-2xl font-bold mb-3">2. Orders, Payment & Processing</h3>
+        <ul class="list-disc pl-6">
+          <li>All payments are securely processed through Stripe.</li>
+          <li>Orders are baked in small batches and prepared fresh.</li>
+          <li>Orders cannot be changed, refunded, or canceled once placed.</li>
         </ul>
       </div>
 
+      <!-- 3 -->
       <div>
-        <h4 class="font-semibold mb-4">Delivery Done Right</h4>
-        <ul class="space-y-2 text-sm text-white text-opacity-90">
-          <li><a href="#" class="hover:opacity-80 transition-opacity">Our Story</a></li>
-          <li><a href="#" class="hover:opacity-80 transition-opacity">Catering</a></li>
-          <li><a href="#" class="hover:opacity-80 transition-opacity">Our Blog</a></li>
+        <h3 class="font-serif text-2xl font-bold mb-3">3. No Returns or Refunds</h3>
+        <p>Because our products are perishable, made-to-order, and temperature-sensitive, we cannot accept returns or provide refunds.</p>
+        <p class="mt-3">Refunds will not be issued for:</p>
+        <ul class="list-disc pl-6">
+          <li>Taste preference concerns</li>
+          <li>Incorrect address provided by customer</li>
+          <li>Delivery delays caused by shipping carriers</li>
+          <li>Spoilage due to heat, weather, or theft after delivery</li>
+        </ul>
+        <p class="mt-3">We review issues case-by-case, but refunds should not be expected.</p>
       </div>
 
-<div>
-  <h4 class="font-semibold mb-4">
-    <a href="mailto:daugsdessertsmarketing@gmail.com" class="hover:opacity-80 transition-opacity">
-      Contact Us
-    </a>
-  </h4>
-
-  <ul class="space-y-2 text-sm text-white text-opacity-90">
-    <li>
-      <a href="contact.html" class="hover:opacity-80 transition-opacity">
-        Contact Us
-      </a>
-    </li>
-
-        <li>
-      <a href="#" class="hover:opacity-80 transition-opacity">
-        Allergens & Ingredients
-      </a>
-    </li>
-  </ul>
-
-    <li>
-      <a href="#" class="hover:opacity-80 transition-opacity">
-        Terms & Conditions
-      </a>
-    </li>
-
-    <li>
-      <a href="#" class="hover:opacity-80 transition-opacity">
-        Privacy Policy
-      </a>
-    </li>
-  </ul>
-</div>
-
+      <!-- 4 -->
       <div>
-        <h4 class="font-semibold mb-4">Follow Us</h4>
-        <ul class="space-y-2 text-sm text-white text-opacity-90">
-          <li><a href="https://www.instagram.com/daugsdesserts/" class="hover:opacity-80 transition-opacity">Instagram</a></li>
-          <li><a href="https://www.facebook.com/profile.php?id=61575046289470" class="hover:opacity-80 transition-opacity">Facebook</a></li>
+        <h3 class="font-serif text-2xl font-bold mb-3">4. Complaints & Feedback</h3>
+        <p>
+          We value feedback and use it to improve over time. However, feedback does not guarantee changes to recipes, menu items, or policies.
+        </p>
+      </div>
+
+      <!-- 5 -->
+      <div>
+        <h3 class="font-serif text-2xl font-bold mb-3">5. Allergen Notice & Liability</h3>
+        <p class="mb-3">Products may contain or come into contact with:</p>
+        <ul class="list-disc pl-6">
+          <li>Wheat</li>
+          <li>Eggs</li>
+          <li>Dairy</li>
+          <li>Soy</li>
+          <li>Peanuts & Tree Nuts</li>
+          <li>Cocoa</li>
+          <li>Oats</li>
+        </ul>
+        <p class="mt-4 font-semibold text-red-700">We cannot guarantee any product is allergen-free.</p>
+        <p class="mt-3">
+          By purchasing, you agree Daug's Desserts is not liable for allergic reactions, cross-contact, or health complications.
+        </p>
+      </div>
+
+      <!-- 6 -->
+      <div>
+        <h3 class="font-serif text-2xl font-bold mb-3">6. Shipping & Delivery</h3>
+        <p class="mb-3">By ordering, you acknowledge:</p>
+        <ul class="list-disc pl-6">
+          <li>Delivery dates are not guaranteed.</li>
+          <li>We are not responsible for delays once shipped.</li>
+          <li>Incorrect addresses provided by customers are not refundable.</li>
+          <li>Carrier damage, heat damage, or theft are outside our control.</li>
         </ul>
       </div>
 
-    </div>
+      <!-- 7 -->
+      <div>
+        <h3 class="font-serif text-2xl font-bold mb-3">7. Use of Google Services</h3>
+        <p>
+          Our site uses Google Forms, Sheets, Gmail, Analytics, and Drive. By submitting information, you agree your data is processed by Google’s encrypted systems.
+        </p>
+      </div>
 
-    <div class="border-t border-white border-opacity-20 mt-8 pt-8 text-center text-sm text-white text-opacity-90">
-      <p>&copy; 2025 Daug's Desserts. All Rights Reserved.</p>
-    </div>
+      <!-- 8 -->
+      <div>
+        <h3 class="font-serif text-2xl font-bold mb-3">8. Gift Notes</h3>
+        <ul class="list-disc pl-6">
+          <li>Printed exactly as submitted</li>
+          <li>Cannot be edited after submission</li>
+          <li>Must be appropriate and safe</li>
+        </ul>
+      </div>
 
+      <!-- 9 -->
+      <div>
+        <h3 class="font-serif text-2xl font-bold mb-3">9. Limitation of Liability</h3>
+        <p>
+          Daug’s Desserts is not liable for allergic reactions, shipping delays, customer errors, theft, spoilage, or indirect damages.  
+          If liability is ever required, it is limited to the cost of the original order.
+        </p>
+      </div>
+
+      <!-- 10 -->
+      <div>
+        <h3 class="font-serif text-2xl font-bold mb-3">10. Policy Updates</h3>
+        <p>
+          We may update these Terms at any time. Updates take effect immediately when posted.
+        </p>
+      </div>
+
+      <!-- 11 -->
+      <div>
+        <h3 class="font-serif text-2xl font-bold mb-3">11. Contact Us</h3>
+        <p>Email: <a href="mailto:daugsdessertsmarketing@gmail.com" class="underline">daugsdessertsmarketing@gmail.com</a></p>
+        <p>Canton, Georgia</p>
+      </div>
+
+    </div>
   </div>
-</footer>
+</section>
+
+<!-- FOOTER -->
+<!-- (Use your updated footer from earlier here) -->
+
+</body>
+</html>
