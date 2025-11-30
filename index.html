@@ -91,6 +91,9 @@
     background: white;
     border-radius: 2px;
   }
+  
+  
+
 </style>
 
 <style>
@@ -141,6 +144,17 @@
         <span class="text-sm font-bold font-sans">Menu</span>
       </button>
 
+      <!-- Left: Hamburger Menu -->
+<button onclick="toggleMenu()" class="flex items-center gap-2 text-white hover:opacity-80 transition-opacity">
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <span class="text-sm font-bold font-sans">Menu</span>
+</button>
+
+
       <!-- Center Logo (Playfair only) -->
 <a href="index.html"
    class="header-logo absolute left-1/2 -translate-x-1/2 text-2xl text-white">
@@ -160,19 +174,23 @@
 </header>
 
 <!-- MOBILE MENU PANEL -->
-<div id="mobileMenu" class="fixed top-16 left-0 w-full bg-white shadow-lg p-6 hidden z-50">
+<div 
+  id="mobileMenu" 
+  class="fixed top-16 left-0 w-full bg-white shadow-xl p-6 z-50 opacity-0 pointer-events-none transform -translate-y-4 transition-all duration-300"
+>
   <h3 class="text-lg font-semibold text-brown-800 mb-4">Our Cookies</h3>
 
   <ul class="space-y-4 text-brown-800 text-base font-medium">
-    <li><a href="chocolate-chip.html" class="hover:text-brand-yellow">Chocolate Chip</a></li>
-    <li><a href="triple-chocolate.html" class="hover:text-brand-yellow">Triple Chocolate</a></li>
+    <li><a href="Chocolate_Chip_Page.html" class="hover:text-brand-yellow">Chocolate Chip</a></li>
+    <li><a href="Triple_Chocolate_Page.html" class="hover:text-brand-yellow">Triple Chocolate</a></li>
     <li><a href="spicy-oatmeal.html" class="hover:text-brand-yellow">Spicy Oatmeal</a></li>
-    <li><a href="gold-rush-sugar.html" class="hover:text-brand-yellow">Gold Rush Sugar Cookie</a></li>
-    <li><a href="caramel-macchiato.html" class="hover:text-brand-yellow">Caramel Macchiato</a></li>
-    <li><a href="ooey-gooey-butter.html" class="hover:text-brand-yellow">Ooey Gooey Butter</a></li>
+    <li><a href="gold-rush-sugar-cookie.htmllass="hover:text-brand-yellow">Gold Rush Sugar Cookie</a></li>
+    <li><a href="CARAMEL MACCHIATO.html" class="hover:text-brand-yellow">Caramel Macchiato</a></li>
+    <li><a href="OOEY GOOEY BUTTER.html" class="hover:text-brand-yellow">Ooey Gooey Butter</a></li>
     <li><a href="assorted-box.html" class="hover:text-brand-yellow">Assorted Box</a></li>
   </ul>
 </div>
+
 
 <script>
   function toggleMenu() {
