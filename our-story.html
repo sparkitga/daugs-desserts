@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daug's Desserts</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daug's Desserts • Our Story</title>
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -20,117 +16,73 @@
       theme: {
         extend: {
           fontFamily: {
-            serif: ['Poppins', 'sans-serif'],
-            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Poppins', 'sans-serif'],
           },
           colors: {
             brand: {
               green: '#3c6e47',
-              yellow: '#f3bb41',
+              yellow: '#f3bb41'
             },
             cream: {
               50: '#fdfcfb',
-              100: '#faf8f5',
-              200: '#f5f1ea',
-              300: '#ebe4d8',
+              100: '#faf8f5'
             },
             brown: {
-              600: '#8b6f47',
               700: '#6b5435',
-              800: '#4a3a24',
-            },
+              800: '#4a3a24'
+            }
           }
         }
       }
     }
   </script>
- 
-
-  <!-- Stripe once -->
-  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 
   <style>
-  /* ORDER NOW BUTTON */
-  .header-buy-btn {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-    display: inline-block;
-  }
-
-  .header-buy-btn:hover {
-    background-color: #f2f2f2 !important;
-  }
-
-  /* CENTER LOGO — Playfair only */
-.header-logo {
-  font-family: 'Playfair Display', serif !important;
-  font-weight: 800 !important;
-  text-transform: lowercase;
-  letter-spacing: -0.5px;
-}
-  /* MENU BUTTON + NAV LINKS */
-  .menu-index-link,
-  .hamburger span,
-  header button span {
-    font-family: 'Poppins', sans-serif !important;
-    font-weight: 800;
-  }
-
-  /* Hamburger bar styling (optional clean) */
-  .hamburger span {
-    display: block;
-    width: 18px;
-    height: 2px;
-    margin: 3px 0;
-    background: white;
-    border-radius: 2px;
-  }
-</style>
-
-<style>
-.doughnut-card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.group:hover .doughnut-card {
-  transform: scale(1.05);
-  box-shadow: 0 12px 22px rgba(0,0,0,0.08);
-}
-</style>
-
+    .header-buy-btn {
+      background-color: #ffffff !important;
+      color: #000 !important;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 800;
+    }
+    .header-buy-btn:hover {
+      background-color: #f2f2f2 !important;
+    }
+    .header-logo {
+      font-family: 'Playfair Display', serif !important;
+      font-weight: 800;
+      text-transform: lowercase;
+      letter-spacing: -0.5px;
+    }
+    .hamburger span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      margin: 3px 0;
+      background: white;
+      border-radius: 2px;
+    }
+  </style>
 </head>
-<body class="scroll-smooth">
 
-  <!-- HEADER -->
+<body class="scroll-smooth bg-cream-50">
+
+<!-- HEADER -->
 <header class="sticky top-0 z-50 bg-brand-green">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="relative flex items-center justify-between h-16">
 
-      <!-- Left: Hamburger Menu -->
-      <button class="flex items-center gap-2 text-white hover:opacity-80 transition-opacity">
+      <button class="flex items-center gap-2 text-white hover:opacity-80">
         <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </div>
-        <span class="text-sm font-bold font-sans">Menu</span>
+        <span class="text-sm font-bold">Menu</span>
       </button>
 
-      <!-- Center Logo (Playfair only) -->
-<a href="index.html"
-   class="header-logo absolute left-1/2 -translate-x-1/2 text-2xl text-white">
-  Daug's Desserts
-</a>
+      <a href="index.html" class="header-logo absolute left-1/2 -translate-x-1/2 text-2xl text-white">Daug's Desserts</a>
 
-      <!-- Right: Order Now -->
-      <a 
-        href="https://buy.stripe.com/eVqeV6c9h2m48sF0I56sw07"
-        class="header-buy-btn text-sm font-medium"
-      >
+      <a href="https://buy.stripe.com/eVqeV6c9h2m48sF0I56sw07" class="header-buy-btn text-sm font-medium">
         Order Now
       </a>
 
@@ -138,111 +90,100 @@
   </div>
 </header>
 
-
-   <!-- MENU INDEX -->
-  <div class="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <nav class="flex gap-8 py-4 overflow-x-auto">
-        <a href="#packs" class="menu-index-link text-sm font-medium text-gray-700 hover:text-brand-yellow whitespace-nowrap">
-          Cookie Boxes
-        </a>
-        <a href="#daily" class="menu-index-link text-sm font-medium text-gray-700 hover:text-brand-yellow whitespace-nowrap">
-          Our Cookies
-        </a>
-      </nav>
-    </div>
+<!-- MENU INDEX -->
+<div class="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="flex gap-8 py-4 overflow-x-auto text-sm font-medium text-gray-700">
+      <a href="index.html#packs" class="hover:text-brand-yellow whitespace-nowrap">Cookie Boxes</a>
+      <a href="index.html#daily" class="hover:text-brand-yellow whitespace-nowrap">Our Cookies</a>
+    </nav>
   </div>
+</div>
 
-  <!-- HERO -->
-  <section class="bg-gradient-to-b from-cream-100 to-cream-50 py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-serif text-5xl md:text-6xl font-bold text-brown-800 mb-4">
-        Our Story
-      </h2>
+<!-- HERO / OUR STORY SECTION -->
+<section class="bg-gradient-to-b from-cream-100 to-cream-50 py-16">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <p class="text-lg text-brown-600 max-w-2xl mx-auto leading-relaxed mb-8">
-Daug’s Desserts was created by Augie “Daug” Oberkrum and Diane Oberkum as our favorite mother-son duo. Both Augie and Diane are catering and baking veterans with mindful creativity and attentive care for detail. We’re proud to share that each and every Daug’s Desserts cookie is made with the intention to spread happiness and cheer to you and your loved ones. 
+    <h1 class="font-serif text-5xl font-bold text-brown-800 text-center mb-6">
+      Our Story
+    </h1>
 
-If Daug’s Desserts or any cookie has made a difference in your life, email or message us. We can’t wait to hear from you! 
+    <p class="text-brown-700 text-center mb-12 text-lg leading-relaxed max-w-2xl mx-auto">
+      Daug’s Desserts was created by Augie “Daug” Oberkrum and his mother, Diane — a duo who brought
+      decades of catering experience, creativity, and warmth into every recipe. What began as a family passion turned into a way
+      to share joy, comfort, and connection one cookie at a time.
 
-Email
-daugsdessertsmarketing@gmail.com
+      <br><br>
 
-Social Media 
-@daugsdesserts
-      </p>
+      Every Daug’s Desserts cookie is made with intention — crafted to brighten a day, spark a memory, or
+      help you slow down for a sweet moment with the people you love. Whether you're gifting a box or enjoying your own, we’re here to help moments feel a little more meaningful.
 
+      <br><br>
 
+      If a cookie has made your day or your story includes us in some small way, we’d love to hear it.
+      Send us a message anytime. Your smiles inspire everything we bake.
+    </p>
+
+    <div class="text-center space-y-3 mt-8">
+      <p class="text-brown-800 text-lg font-semibold">Email</p>
+      <p class="text-brown-700">daugsdessertsmarketing@gmail.com</p>
+
+      <p class="text-brown-800 text-lg font-semibold mt-4">Social Media</p>
+      <p class="text-brown-700">@daugsdesserts</p>
     </div>
-  </section>
 
+  </div>
+</section>
 
-
-
-<!-- Footer -->
+<!-- FOOTER -->
 <footer class="text-cream-100 py-12 bg-black border-t-2" style="border-color:#f3bb41;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-<div class="grid grid-cols-1 md:grid-cols-5 gap-12">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-12">
 
+      <!-- Brand Section -->
       <div>
         <h3 class="font-serif text-2xl font-bold mb-4">Daug's Desserts</h3>
         <p class="text-white text-opacity-90 text-sm leading-relaxed">
-          We love seeing you smile with us. Message us your pictures to enter our raffle for a free box of cookies! @daugsdesserts
+          We love seeing you smile with us. Message us your pictures to enter our raffle 
+          for a free box of cookies! @daugsdesserts
         </p>
       </div>
 
+      <!-- Smile With Us -->
       <div>
         <h4 class="font-semibold mb-4">Smile With Us</h4>
         <ul class="space-y-2 text-sm text-white text-opacity-90">
-          <li><a href="#daily" class="hover:opacity-80 transition-opacity">Cookie Flavors</a></li>
-          <li><a href="#packs" class="hover:opacity-80 transition-opacity">Build Your Box</a></li>
+          <li><a href="index.html#daily" class="hover:opacity-80 transition-opacity">Cookie Boxes & Flavors</a></li>
         </ul>
       </div>
 
+      <!-- Delivery Done Right -->
       <div>
         <h4 class="font-semibold mb-4">Delivery Done Right</h4>
         <ul class="space-y-2 text-sm text-white text-opacity-90">
-          <li><a href="#" class="hover:opacity-80 transition-opacity">Our Story</a></li>
+          <li><a href="our-story.html" class="hover:opacity-80 transition-opacity">Our Story</a></li>
           <li><a href="#" class="hover:opacity-80 transition-opacity">Catering</a></li>
           <li><a href="#" class="hover:opacity-80 transition-opacity">Our Blog</a></li>
+        </ul>
       </div>
 
-<div>
-  <h4 class="font-semibold mb-4">
-    <a href="mailto:daugsdessertsmarketing@gmail.com" class="hover:opacity-80 transition-opacity">
-      Contact Us
-    </a>
-  </h4>
+      <!-- Contact + Legal -->
+      <div>
+        <h4 class="font-semibold mb-4">Contact Us</h4>
 
-  <ul class="space-y-2 text-sm text-white text-opacity-90">
-    <li>
-      <a href="contact.html" class="hover:opacity-80 transition-opacity">
-        Contact Us
-      </a>
-    </li>
+        <ul class="space-y-2 text-sm text-white text-opacity-90">
+          <li><a href="contact.html" class="hover:opacity-80 transition-opacity">Contact Form</a></li>
 
-        <li>
-      <a href="#" class="hover:opacity-80 transition-opacity">
-        Allergens & Ingredients
-      </a>
-    </li>
-  </ul>
+          <li><a href="allergens.html" class="hover:opacity-80 transition-opacity">Allergens & Ingredients</a></li>
 
-    <li>
-      <a href="#" class="hover:opacity-80 transition-opacity">
-        Terms & Conditions
-      </a>
-    </li>
+          <li><a href="terms-conditions.html" class="hover:opacity-80 transition-opacity">Terms & Conditions</a></li>
 
-    <li>
-      <a href="#" class="hover:opacity-80 transition-opacity">
-        Privacy Policy
-      </a>
-    </li>
-  </ul>
-</div>
+          <li><a href="privacy-policy.html" class="hover:opacity-80 transition-opacity">Privacy Policy</a></li>
+        </ul>
+      </div>
 
+      <!-- Social -->
       <div>
         <h4 class="font-semibold mb-4">Follow Us</h4>
         <ul class="space-y-2 text-sm text-white text-opacity-90">
@@ -253,9 +194,13 @@ Social Media
 
     </div>
 
+    <!-- Footer Bottom -->
     <div class="border-t border-white border-opacity-20 mt-8 pt-8 text-center text-sm text-white text-opacity-90">
       <p>&copy; 2025 Daug's Desserts. All Rights Reserved.</p>
     </div>
 
   </div>
 </footer>
+
+</body>
+</html>

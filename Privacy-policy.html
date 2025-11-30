@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daug's Desserts • Privacy Policy</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
   <script>
     tailwind.config = {
       theme: {
@@ -26,11 +30,14 @@
             cream: {
               50: '#fdfcfb',
               100: '#faf8f5',
+              200: '#f5f1ea',
+              300: '#ebe4d8',
             },
             brown: {
+              600: '#8b6f47',
               700: '#6b5435',
               800: '#4a3a24',
-            },
+            }
           }
         }
       }
@@ -40,16 +47,16 @@
   <style>
     .header-buy-btn {
       background-color: #ffffff !important;
-      color: #000 !important;
+      color: #000000 !important;
       padding: 8px 16px;
       border-radius: 6px;
       font-weight: 800;
     }
-    .header-logo {
-      font-family: 'Playfair Display', serif;
-      font-weight: 800;
-      text-transform: lowercase;
+
+    .header-buy-btn:hover {
+      background-color: #f2f2f2 !important;
     }
+
     .hamburger span {
       display: block;
       width: 18px;
@@ -58,9 +65,16 @@
       background: white;
       border-radius: 2px;
     }
-  </style>
-</head>
 
+    .header-logo {
+      font-family: 'Playfair Display', serif !important;
+      font-weight: 800 !important;
+      text-transform: lowercase;
+      letter-spacing: -0.5px;
+    }
+  </style>
+
+</head>
 <body class="scroll-smooth bg-cream-50">
 
 <!-- HEADER -->
@@ -68,13 +82,22 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="relative flex items-center justify-between h-16">
 
-      <button class="flex items-center gap-2 text-white hover:opacity-80">
-        <div class="hamburger"><span></span><span></span><span></span></div>
+      <!-- Hamburger -->
+      <button class="flex items-center gap-2 text-white hover:opacity-80 transition-opacity">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <span class="text-sm font-bold">Menu</span>
       </button>
 
-      <a href="index.html" class="header-logo absolute left-1/2 -translate-x-1/2 text-2xl text-white">Daug's Desserts</a>
+      <!-- Logo -->
+      <a href="index.html" class="header-logo absolute left-1/2 -translate-x-1/2 text-2xl text-white">
+        Daug's Desserts
+      </a>
 
+      <!-- Order Now -->
       <a href="https://buy.stripe.com/eVqeV6c9h2m48sF0I56sw07" class="header-buy-btn text-sm font-medium">
         Order Now
       </a>
@@ -86,175 +109,111 @@
 <!-- MENU INDEX -->
 <div class="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <nav class="flex gap-8 py-4 overflow-x-auto text-sm font-medium text-gray-700">
-      <a href="#packs" class="hover:text-brand-yellow whitespace-nowrap">Cookie Boxes</a>
-      <a href="#daily" class="hover:text-brand-yellow whitespace-nowrap">Our Cookies</a>
+    <nav class="flex gap-8 py-4 overflow-x-auto">
+      <a href="index.html#packs" class="text-sm font-semibold text-gray-700 hover:text-brand-yellow whitespace-nowrap">
+        Cookie Boxes
+      </a>
+      <a href="index.html#daily" class="text-sm font-semibold text-gray-700 hover:text-brand-yellow whitespace-nowrap">
+        Our Cookies
+      </a>
     </nav>
   </div>
 </div>
 
-
-<!-- PRIVACY POLICY HERO -->
+<!-- PRIVACY POLICY CONTENT -->
 <section class="bg-gradient-to-b from-cream-100 to-cream-50 py-16">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <h1 class="font-serif text-5xl font-bold text-brown-800 text-center mb-6">
+    <h2 class="font-serif text-5xl md:text-6xl font-bold text-brown-800 text-center mb-10">
       Privacy Policy
-    </h1>
+    </h2>
 
-    <p class="text-brown-700 text-center mb-12 text-lg">Last Updated: November 2025</p>
+    <div class="space-y-8 text-brown-700 leading-relaxed text-lg">
 
+      <p><strong>Last Updated:</strong> November 2025</p>
 
-    <!-- CONTENT -->
-    <div class="space-y-12 text-brown-800 leading-relaxed">
+      <h3 class="font-serif text-3xl font-bold text-brown-800">1. Introduction & Scope</h3>
+      <p>
+        At Daug’s Desserts, your trust matters. This Privacy Policy explains how we collect, use, protect, 
+        and share your information when you interact with our website, order forms, Shopify checkout, 
+        Google-powered tools, and delivery services.
+      </p>
 
-      <!-- 1 -->
-      <div>
-        <h3 class="font-serif text-2xl font-bold mb-3">1. Introduction & Scope</h3>
-        <p>
-          At Daug’s Desserts, your trust matters. This Privacy Policy explains how we collect, use, protect, and share your information when you interact with our website, order forms, Google tools, digital communications, and shipping services.  
-          This policy does not apply to outside platforms (Instagram, Facebook, Stripe, etc.).
-        </p>
-      </div>
+      <h3 class="font-serif text-3xl font-bold text-brown-800">2. Information We Collect</h3>
 
-      <!-- 2 -->
-      <div>
-        <h3 class="font-serif text-2xl font-bold mb-3">2. Information We Collect</h3>
+      <p><strong>A. Information You Provide Directly</strong></p>
+      <ul class="list-disc ml-6 space-y-1">
+        <li>Name</li>
+        <li>Email</li>
+        <li>Phone number</li>
+        <li>Shipping address</li>
+        <li>Gift recipient details</li>
+        <li>Order preferences & product selections</li>
+        <li>Custom notes (To/From/Message)</li>
+        <li>Allergy notes or special instructions</li>
+      </ul>
 
-        <h4 class="font-semibold text-lg mt-4 mb-2">A. Information You Provide Directly</h4>
-        <p>When placing an order or submitting a custom note, you may provide:</p>
-        <ul class="list-disc pl-6 mt-2">
-          <li>Name</li>
-          <li>Email</li>
-          <li>Phone number</li>
-          <li>Shipping or delivery address</li>
-          <li>Recipient details for gifts</li>
-          <li>Custom messages</li>
-          <li>Order selections & quantity</li>
-          <li>Allergy notes or preferences</li>
-        </ul>
+      <p><strong>B. Information Collected Automatically</strong></p>
+      <ul class="list-disc ml-6 space-y-1">
+        <li>IP address</li>
+        <li>Device & browser info</li>
+        <li>Site traffic & usage data</li>
+        <li>Cookie tracking data</li>
+      </ul>
 
-        <p class="mt-4">
-          This data is stored in secure Google Sheets and Google Forms, and confirmations are sent through Gmail.
-        </p>
+      <h3 class="font-serif text-3xl font-bold text-brown-800">3. How We Use Your Information</h3>
+      <ul class="list-disc ml-6 space-y-1">
+        <li>Process and fulfill cookie orders</li>
+        <li>Create accurate shipping labels</li>
+        <li>Send order confirmations & updates</li>
+        <li>Improve our menu, packaging, and services</li>
+        <li>Support customer service needs</li>
+        <li>Prevent fraud and incorrect orders</li>
+      </ul>
 
-        <h4 class="font-semibold text-lg mt-6 mb-2">B. Information Collected Automatically</h4>
-        <p>Google-powered tools may collect:</p>
-        <ul class="list-disc pl-6 mt-2">
-          <li>IP address</li>
-          <li>Browser & device type</li>
-          <li>Site usage data</li>
-          <li>Cookie performance data</li>
-        </ul>
-      </div>
+      <h3 class="font-serif text-3xl font-bold text-brown-800">4. Information Sharing</h3>
+      <p>We do not sell personal information.</p>
+      <p>We only share data with trusted partners such as Google tools, Stripe for payments, and shipping carriers.</p>
 
-      <!-- 3 -->
-      <div>
-        <h3 class="font-serif text-2xl font-bold mb-3">3. How We Use Your Information</h3>
-        <ul class="list-disc pl-6">
-          <li>Process and fulfill orders</li>
-          <li>Prepare accurate shipping labels</li>
-          <li>Communicate updates or delivery questions</li>
-          <li>Personalize your ordering or gifting experience</li>
-          <li>Improve menu and service offerings</li>
-          <li>Prevent fraud or duplicate orders</li>
-          <li>Store notes for gifting or customer support</li>
-        </ul>
-      </div>
+      <h3 class="font-serif text-3xl font-bold text-brown-800">5. User Choices & Control</h3>
+      <ul class="list-disc ml-6 space-y-1">
+        <li>Update your info anytime</li>
+        <li>Request deletion of your data</li>
+        <li>Request a copy of your stored info</li>
+        <li>Opt out of communication</li>
+      </ul>
 
-      <!-- 4 -->
-      <div>
-        <h3 class="font-serif text-2xl font-bold mb-3">4. Information Sharing & Disclosure</h3>
-        <p>We do not sell personal information. We only share data with trusted partners including:</p>
-        <ul class="list-disc pl-6 mt-2">
-          <li>Google (Forms, Sheets, Analytics, Gmail)</li>
-          <li>Stripe payment processing</li>
-          <li>USPS, UPS, FedEx, or local couriers</li>
-        </ul>
-      </div>
+      <h3 class="font-serif text-3xl font-bold text-brown-800">6. Cookies</h3>
+      <p>You may disable cookies via your browser. Some features may be impacted.</p>
 
-      <!-- 5 -->
-      <div>
-        <h3 class="font-serif text-2xl font-bold mb-3">5. User Choices & Control</h3>
-        <p>You may request to:</p>
-        <ul class="list-disc pl-6 mt-2">
-          <li>Update or correct your information</li>
-          <li>Delete your data after order completion</li>
-          <li>Opt out of promotional communication</li>
-          <li>Request a copy of stored data</li>
-        </ul>
-        <p class="mt-4">Email: <a href="mailto:daugsdessertsmarketing@gmail.com" class="underline">daugsdessertsmarketing@gmail.com</a></p>
-      </div>
+      <h3 class="font-serif text-3xl font-bold text-brown-800">7. Children’s Privacy</h3>
+      <p>Daug’s Desserts does not knowingly collect information from children under 13.</p>
 
-      <!-- 6 -->
-      <div>
-        <h3 class="font-serif text-2xl font-bold mb-3">6. Cookies & Tracking</h3>
-        <p>
-          Daug’s Desserts uses basic cookies and Google Analytics tools to improve website speed and experience.
-          You may disable cookies, though some features may be affected.
-        </p>
-      </div>
+      <h3 class="font-serif text-3xl font-bold text-brown-800">8. Data Security</h3>
+      <p>We use Google’s encrypted storage, secure Stripe processing, and limited data access.</p>
 
-      <!-- 7 -->
-      <div>
-        <h3 class="font-serif text-2xl font-bold mb-3">7. Children’s Privacy</h3>
-        <p>
-          We do not intentionally collect personal information from children under 13.  
-          If you believe information was submitted by a child, please contact us immediately.
-        </p>
-      </div>
+      <h3 class="font-serif text-3xl font-bold text-brown-800">9. Shipping & Delivery Data</h3>
+      <p>We share your address only with shipping carriers. Delivery data may be stored temporarily for tracking.</p>
 
-      <!-- 8 -->
-      <div>
-        <h3 class="font-serif text-2xl font-bold mb-3">8. Data Security</h3>
-        <p>
-          We protect your data using Google’s encrypted systems, Stripe’s secure payment platform, and limited-access storage within our bakery operations.
-        </p>
-      </div>
+      <h3 class="font-serif text-3xl font-bold text-brown-800">10. International Users</h3>
+      <p>Data is stored and processed in the United States.</p>
 
-      <!-- 9 -->
-      <div>
-        <h3 class="font-serif text-2xl font-bold mb-3">9. Shipping, Delivery & Address Data</h3>
-        <p>
-          Your address may be shared with shipping carriers, and delivery data may be temporarily stored to ensure order accuracy and support future troubleshooting.
-        </p>
-      </div>
+      <h3 class="font-serif text-3xl font-bold text-brown-800">11. Policy Updates</h3>
+      <p>We may update this policy and will post changes on our website.</p>
 
-      <!-- 10 -->
-      <div>
-        <h3 class="font-serif text-2xl font-bold mb-3">10. International Users</h3>
-        <p>
-          Daug’s Desserts operates in the United States. By ordering, international customers agree that their data will be stored in the U.S.
-        </p>
-      </div>
-
-      <!-- 11 -->
-      <div>
-        <h3 class="font-serif text-2xl font-bold mb-3">11. Policy Updates</h3>
-        <p>
-          We may update this Privacy Policy as needed. Significant changes will be noted on our website.
-        </p>
-      </div>
-
-      <!-- 12 -->
-      <div>
-        <h3 class="font-serif text-2xl font-bold mb-3">12. Contact Us</h3>
-        <p>Email: <a href="mailto:daugsdessertsmarketing@gmail.com" class="underline">daugsdessertsmarketing@gmail.com</a></p>
-        <p>Canton, Georgia</p>
-        <p class="mt-2">We typically respond within 48 hours.</p>
-      </div>
+      <h3 class="font-serif text-3xl font-bold text-brown-800">12. Contact Information</h3>
+      <p>
+        Questions? Email us at:<br>
+        <strong>daugsdessertsmarketing@gmail.com</strong><br>
+        Canton, Georgia
+      </p>
 
     </div>
+
   </div>
 </section>
 
-
-<!-- FOOTER (your updated footer remains unchanged) -->
-<!-- Paste your final footer here -->
-
-
-</body>
-<!-- Footer -->
+<!-- FOOTER -->
 <footer class="text-cream-100 py-12 bg-black border-t-2" style="border-color:#f3bb41;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -264,8 +223,7 @@
       <div>
         <h3 class="font-serif text-2xl font-bold mb-4">Daug's Desserts</h3>
         <p class="text-white text-opacity-90 text-sm leading-relaxed">
-          We love seeing you smile with us. Message us your pictures to enter our raffle 
-          for a free box of cookies! @daugsdesserts
+          We love seeing you smile with us. Message us your pictures to enter our raffle for a free box of cookies! @daugsdesserts
         </p>
       </div>
 
@@ -273,7 +231,7 @@
       <div>
         <h4 class="font-semibold mb-4">Smile With Us</h4>
         <ul class="space-y-2 text-sm text-white text-opacity-90">
-          <li><a href="#daily" class="hover:opacity-80 transition-opacity">Cookie Boxes & Flavors</a></li>
+          <li><a href="index.html#daily" class="hover:opacity-80 transition-opacity">Cookie Boxes & Flavors</a></li>
         </ul>
       </div>
 
@@ -292,29 +250,10 @@
         <h4 class="font-semibold mb-4">Contact Us</h4>
 
         <ul class="space-y-2 text-sm text-white text-opacity-90">
-          <li>
-            <a href="contact.html" class="hover:opacity-80 transition-opacity">
-              Contact Form
-            </a>
-          </li>
-
-          <li>
-            <a href="allergens.html" class="hover:opacity-80 transition-opacity">
-              Allergens & Ingredients
-            </a>
-          </li>
-
-          <li>
-            <a href="terms-conditions.html" class="hover:opacity-80 transition-opacity">
-              Terms & Conditions
-            </a>
-          </li>
-
-          <li>
-            <a href="privacy-policy.html" class="hover:opacity-80 transition-opacity">
-              Privacy Policy
-            </a>
-          </li>
+          <li><a href="contact.html" class="hover:opacity-80 transition-opacity">Contact Form</a></li>
+          <li><a href="allergens.html" class="hover:opacity-80 transition-opacity">Allergens & Ingredients</a></li>
+          <li><a href="terms-conditions.html" class="hover:opacity-80 transition-opacity">Terms & Conditions</a></li>
+          <li><a href="privacy-policy.html" class="hover:opacity-80 transition-opacity">Privacy Policy</a></li>
         </ul>
       </div>
 
@@ -329,11 +268,12 @@
 
     </div>
 
-    <!-- Footer Bottom -->
     <div class="border-t border-white border-opacity-20 mt-8 pt-8 text-center text-sm text-white text-opacity-90">
       <p>&copy; 2025 Daug's Desserts. All Rights Reserved.</p>
     </div>
 
   </div>
 </footer>
+
+</body>
 </html>
