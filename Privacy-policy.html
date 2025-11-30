@@ -3,25 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daug's Desserts</title>
+  <title>Daug's Desserts • Privacy Policy</title>
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
-
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            serif: ['Poppins', 'sans-serif'],
-            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Poppins', 'sans-serif'],
           },
           colors: {
             brand: {
@@ -31,11 +26,8 @@
             cream: {
               50: '#fdfcfb',
               100: '#faf8f5',
-              200: '#f5f1ea',
-              300: '#ebe4d8',
             },
             brown: {
-              600: '#8b6f47',
               700: '#6b5435',
               800: '#4a3a24',
             },
@@ -44,93 +36,46 @@
       }
     }
   </script>
- 
-
-  <!-- Stripe once -->
-  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 
   <style>
-  /* ORDER NOW BUTTON */
-  .header-buy-btn {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-    display: inline-block;
-  }
-
-  .header-buy-btn:hover {
-    background-color: #f2f2f2 !important;
-  }
-
-  /* CENTER LOGO — Playfair only */
-.header-logo {
-  font-family: 'Playfair Display', serif !important;
-  font-weight: 800 !important;
-  text-transform: lowercase;
-  letter-spacing: -0.5px;
-}
-  /* MENU BUTTON + NAV LINKS */
-  .menu-index-link,
-  .hamburger span,
-  header button span {
-    font-family: 'Poppins', sans-serif !important;
-    font-weight: 800;
-  }
-
-  /* Hamburger bar styling (optional clean) */
-  .hamburger span {
-    display: block;
-    width: 18px;
-    height: 2px;
-    margin: 3px 0;
-    background: white;
-    border-radius: 2px;
-  }
-</style>
-
-<style>
-.doughnut-card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.group:hover .doughnut-card {
-  transform: scale(1.05);
-  box-shadow: 0 12px 22px rgba(0,0,0,0.08);
-}
-</style>
-
+    .header-buy-btn {
+      background-color: #ffffff !important;
+      color: #000 !important;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 800;
+    }
+    .header-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      text-transform: lowercase;
+    }
+    .hamburger span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      margin: 3px 0;
+      background: white;
+      border-radius: 2px;
+    }
+  </style>
 </head>
-<body class="scroll-smooth">
 
-  <!-- HEADER -->
+<body class="scroll-smooth bg-cream-50">
+
+<!-- HEADER -->
 <header class="sticky top-0 z-50 bg-brand-green">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="relative flex items-center justify-between h-16">
 
-      <!-- Left: Hamburger Menu -->
-      <button class="flex items-center gap-2 text-white hover:opacity-80 transition-opacity">
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <span class="text-sm font-bold font-sans">Menu</span>
+      <button class="flex items-center gap-2 text-white hover:opacity-80">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+        <span class="text-sm font-bold">Menu</span>
       </button>
 
-      <!-- Center Logo (Playfair only) -->
-<a href="index.html"
-   class="header-logo absolute left-1/2 -translate-x-1/2 text-2xl text-white">
-  Daug's Desserts
-</a>
+      <a href="index.html" class="header-logo absolute left-1/2 -translate-x-1/2 text-2xl text-white">Daug's Desserts</a>
 
-      <!-- Right: Order Now -->
-      <a 
-        href="https://buy.stripe.com/eVqeV6c9h2m48sF0I56sw07"
-        class="header-buy-btn text-sm font-medium"
-      >
+      <a href="https://buy.stripe.com/eVqeV6c9h2m48sF0I56sw07" class="header-buy-btn text-sm font-medium">
         Order Now
       </a>
 
@@ -138,278 +83,242 @@
   </div>
 </header>
 
+<!-- MENU INDEX -->
+<div class="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="flex gap-8 py-4 overflow-x-auto text-sm font-medium text-gray-700">
+      <a href="#packs" class="hover:text-brand-yellow whitespace-nowrap">Cookie Boxes</a>
+      <a href="#daily" class="hover:text-brand-yellow whitespace-nowrap">Our Cookies</a>
+    </nav>
+  </div>
+</div>
 
-   <!-- MENU INDEX -->
-  <div class="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <nav class="flex gap-8 py-4 overflow-x-auto">
-        <a href="#packs" class="menu-index-link text-sm font-medium text-gray-700 hover:text-brand-yellow whitespace-nowrap">
-          Cookie Boxes
-        </a>
-        <a href="#daily" class="menu-index-link text-sm font-medium text-gray-700 hover:text-brand-yellow whitespace-nowrap">
-          Our Cookies
-        </a>
-      </nav>
+
+<!-- PRIVACY POLICY HERO -->
+<section class="bg-gradient-to-b from-cream-100 to-cream-50 py-16">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <h1 class="font-serif text-5xl font-bold text-brown-800 text-center mb-6">
+      Privacy Policy
+    </h1>
+
+    <p class="text-brown-700 text-center mb-12 text-lg">Last Updated: November 2025</p>
+
+
+    <!-- CONTENT -->
+    <div class="space-y-12 text-brown-800 leading-relaxed">
+
+      <!-- 1 -->
+      <div>
+        <h3 class="font-serif text-2xl font-bold mb-3">1. Introduction & Scope</h3>
+        <p>
+          At Daug’s Desserts, your trust matters. This Privacy Policy explains how we collect, use, protect, and share your information when you interact with our website, order forms, Google tools, digital communications, and shipping services.  
+          This policy does not apply to outside platforms (Instagram, Facebook, Stripe, etc.).
+        </p>
+      </div>
+
+      <!-- 2 -->
+      <div>
+        <h3 class="font-serif text-2xl font-bold mb-3">2. Information We Collect</h3>
+
+        <h4 class="font-semibold text-lg mt-4 mb-2">A. Information You Provide Directly</h4>
+        <p>When placing an order or submitting a custom note, you may provide:</p>
+        <ul class="list-disc pl-6 mt-2">
+          <li>Name</li>
+          <li>Email</li>
+          <li>Phone number</li>
+          <li>Shipping or delivery address</li>
+          <li>Recipient details for gifts</li>
+          <li>Custom messages</li>
+          <li>Order selections & quantity</li>
+          <li>Allergy notes or preferences</li>
+        </ul>
+
+        <p class="mt-4">
+          This data is stored in secure Google Sheets and Google Forms, and confirmations are sent through Gmail.
+        </p>
+
+        <h4 class="font-semibold text-lg mt-6 mb-2">B. Information Collected Automatically</h4>
+        <p>Google-powered tools may collect:</p>
+        <ul class="list-disc pl-6 mt-2">
+          <li>IP address</li>
+          <li>Browser & device type</li>
+          <li>Site usage data</li>
+          <li>Cookie performance data</li>
+        </ul>
+      </div>
+
+      <!-- 3 -->
+      <div>
+        <h3 class="font-serif text-2xl font-bold mb-3">3. How We Use Your Information</h3>
+        <ul class="list-disc pl-6">
+          <li>Process and fulfill orders</li>
+          <li>Prepare accurate shipping labels</li>
+          <li>Communicate updates or delivery questions</li>
+          <li>Personalize your ordering or gifting experience</li>
+          <li>Improve menu and service offerings</li>
+          <li>Prevent fraud or duplicate orders</li>
+          <li>Store notes for gifting or customer support</li>
+        </ul>
+      </div>
+
+      <!-- 4 -->
+      <div>
+        <h3 class="font-serif text-2xl font-bold mb-3">4. Information Sharing & Disclosure</h3>
+        <p>We do not sell personal information. We only share data with trusted partners including:</p>
+        <ul class="list-disc pl-6 mt-2">
+          <li>Google (Forms, Sheets, Analytics, Gmail)</li>
+          <li>Stripe payment processing</li>
+          <li>USPS, UPS, FedEx, or local couriers</li>
+        </ul>
+      </div>
+
+      <!-- 5 -->
+      <div>
+        <h3 class="font-serif text-2xl font-bold mb-3">5. User Choices & Control</h3>
+        <p>You may request to:</p>
+        <ul class="list-disc pl-6 mt-2">
+          <li>Update or correct your information</li>
+          <li>Delete your data after order completion</li>
+          <li>Opt out of promotional communication</li>
+          <li>Request a copy of stored data</li>
+        </ul>
+        <p class="mt-4">Email: <a href="mailto:daugsdessertsmarketing@gmail.com" class="underline">daugsdessertsmarketing@gmail.com</a></p>
+      </div>
+
+      <!-- 6 -->
+      <div>
+        <h3 class="font-serif text-2xl font-bold mb-3">6. Cookies & Tracking</h3>
+        <p>
+          Daug’s Desserts uses basic cookies and Google Analytics tools to improve website speed and experience.
+          You may disable cookies, though some features may be affected.
+        </p>
+      </div>
+
+      <!-- 7 -->
+      <div>
+        <h3 class="font-serif text-2xl font-bold mb-3">7. Children’s Privacy</h3>
+        <p>
+          We do not intentionally collect personal information from children under 13.  
+          If you believe information was submitted by a child, please contact us immediately.
+        </p>
+      </div>
+
+      <!-- 8 -->
+      <div>
+        <h3 class="font-serif text-2xl font-bold mb-3">8. Data Security</h3>
+        <p>
+          We protect your data using Google’s encrypted systems, Stripe’s secure payment platform, and limited-access storage within our bakery operations.
+        </p>
+      </div>
+
+      <!-- 9 -->
+      <div>
+        <h3 class="font-serif text-2xl font-bold mb-3">9. Shipping, Delivery & Address Data</h3>
+        <p>
+          Your address may be shared with shipping carriers, and delivery data may be temporarily stored to ensure order accuracy and support future troubleshooting.
+        </p>
+      </div>
+
+      <!-- 10 -->
+      <div>
+        <h3 class="font-serif text-2xl font-bold mb-3">10. International Users</h3>
+        <p>
+          Daug’s Desserts operates in the United States. By ordering, international customers agree that their data will be stored in the U.S.
+        </p>
+      </div>
+
+      <!-- 11 -->
+      <div>
+        <h3 class="font-serif text-2xl font-bold mb-3">11. Policy Updates</h3>
+        <p>
+          We may update this Privacy Policy as needed. Significant changes will be noted on our website.
+        </p>
+      </div>
+
+      <!-- 12 -->
+      <div>
+        <h3 class="font-serif text-2xl font-bold mb-3">12. Contact Us</h3>
+        <p>Email: <a href="mailto:daugsdessertsmarketing@gmail.com" class="underline">daugsdessertsmarketing@gmail.com</a></p>
+        <p>Canton, Georgia</p>
+        <p class="mt-2">We typically respond within 48 hours.</p>
+      </div>
+
     </div>
   </div>
+</section>
 
-  <!-- HERO -->
-  <section class="bg-gradient-to-b from-cream-100 to-cream-50 py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-serif text-5xl md:text-6xl font-bold text-brown-800 mb-4">
-        Daug's Desserts' Privacy Policy
-      </h2>
 
-      <p class="text-lg text-brown-600 max-w-2xl mx-auto leading-relaxed mb-8">
-Last Updated: November 2025
+<!-- FOOTER (your updated footer remains unchanged) -->
+<!-- Paste your final footer here -->
 
-1. Introduction & Scope
 
-At Daug’s Desserts, your trust matters.
-This Privacy Policy explains how we collect, use, protect, and share your information when you interact with our:
-
-• Website
-• Order forms
-• Custom note forms
-• Google-powered tools (Google Forms, Google Sheets, Google Analytics, Gmail, etc.)
-• Digital communication
-• Shipping and delivery services
-
-This policy does not apply to outside platforms we link to (e.g., Instagram, Facebook, Stripe).
-
-2. Information We Collect
-
-We collect information in two ways: (A) information you share directly and (B) information collected automatically.
-
-A. Information You Provide Directly
-
-When you order baked goods, submit a custom note, or use any Daug’s Desserts form, you may provide:
-
-Contact & Shipping Information
-• Name (First & Last)
-• Email address
-• Phone number
-• Delivery or shipping address
-• Recipient name & address (for gifts)
-
-Order & Product Information
-• Product selections (cookie boxes, single cookies, custom packs)
-• Quantity
-• Special instructions
-• Custom messages (“To:” “From:” “Note:” fields)
-• Preferred delivery date
-• Allergy concerns or dietary notes
-
-Customer Interests
-• Favorite cookies or flavors
-• Gift options
-• Repeat-order preferences
-
-We use this information to prepare, package, and deliver your baked goods safely and accurately.
-
-Data from your forms is securely stored through Google Sheets and Google Forms, and email confirmations are sent through Gmail.
-
-B. Information Collected Automatically
-
-When you visit our site, Google-powered tools may collect:
-
-• IP address
-• Browser type
-• Device type
-• Site usage and traffic data
-• Interaction with product pages
-• Cookie performance data
-
-We may use:
-
-• Google Analytics (basic traffic insights)
-• Google Tag Manager
-• Standard browser cookies
-
-This helps us improve the ordering experience and website performance.
-
-3. How We Use Your Information
-
-We use your information to:
-
-• Process and fulfill cookie orders
-• Prepare accurate delivery and shipping labels
-• Communicate order status, confirmations, and questions
-• Provide customer support
-• Personalize your gifting or order experience
-• Improve our menu, packaging, and customer service
-• Prevent fraud or duplicated orders
-• Maintain a record of past orders for quality assurance
-
-We may also use your contact information to clarify delivery issues (e.g., address errors, time windows).
-
-If you submit a custom note, your message is securely stored through Google Sheets and printed for inclusion in your order.
-
-4. Information Sharing & Disclosure
-
-We do not sell personal information.
-
-We may share your information only with trusted partners who help us operate Daug’s Desserts, such as:
-
-• Google (Forms, Sheets, Analytics, Gmail)
-• Stripe, for secure payment processing
-• Shipping carriers (USPS, UPS, FedEx, local couriers)
-• Delivery partners, when applicable
-
-These partners follow their own privacy and security standards.
-
-5. User Choices & Control
-
-You may:
-
-• Request to update your information
-• Correct incorrect contact or shipping details
-• Ask us to delete your information after your order is complete
-• Opt out of any promotional communication
-• Request a copy of the information stored in our Google Sheets
-
-You can exercise your rights by emailing: daugsdessertsmarketing@gmail.com
-
-If you submitted incorrect information, let us know immediately so we can make corrections before baking or shipping.
-
-6. Cookies & Tracking Technologies
-
-Daug’s Desserts uses basic cookies and Google tracking tools to improve site experience and ordering performance.
-
-You may disable cookies in your browser.
-Some features (analytics, loading speed) may be impacted but you will still be able to order.
-
-7. Children’s Privacy
-
-Our bakery and website are not targeted to children under 13.
-
-We do not intentionally collect personal information from children under 13 without verified parental consent.
-
-If you believe a child submitted information by mistake, contact us right away at: daugsdessertsmarketing@gmail.com
-
-8. Data Security
-
-We take your privacy seriously and work hard to protect your information.
-
-Our safeguards include:
-
-• Secure Google cloud storage
-• Google Forms and Sheets’ built-in encryption
-• Secure payment processing through Stripe
-• Limited access to customer forms
-• No physical printing of data except shipping labels or customer notes
-
-While no digital system is 100% perfect, we are committed to handling your information with care and integrity.
-
-9. Shipping, Delivery & Address Data
-
-By placing an order, you agree that:
-
-• Your address may be shared with shipping carriers
-• We may contact you or the recipient for delivery issues
-• Delivery data is stored temporarily for tracking and service quality
-• Address information may be kept for repeat customer support or troubleshooting (unless deletion is requested)
-
-We do not use address information for marketing unless voluntarily provided.
-
-10. International Users
-
-Daug’s Desserts operates in the United States.
-By purchasing or interacting with our website, international users acknowledge that their data will be processed and stored in the U.S.
-
-11. Policy Updates
-
-We may update this Privacy Policy occasionally to reflect changes in:
-
-• Google tools
-• Our menu
-• Our shipping and delivery process
-• Legal requirements
-• New online ordering features
-
-If major changes occur, we will notify customers on our website or by email.
-
-12. Contact Information
-
-If you have any questions about your data or privacy, contact:
-
-Daug’s Desserts Privacy Team
-daugsdessertsmarketing@gmail.com
-Canton, Georgia
-
-We will respond within 48 hours. Talk to you soon!
-      </p>
-
-    </div>
-  </section>
-
-
-
-
+</body>
 <!-- Footer -->
 <footer class="text-cream-100 py-12 bg-black border-t-2" style="border-color:#f3bb41;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-<div class="grid grid-cols-1 md:grid-cols-5 gap-12">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-12">
 
+      <!-- Brand Section -->
       <div>
         <h3 class="font-serif text-2xl font-bold mb-4">Daug's Desserts</h3>
         <p class="text-white text-opacity-90 text-sm leading-relaxed">
-          We love seeing you smile with us. Message us your pictures to enter our raffle for a free box of cookies! @daugsdesserts
+          We love seeing you smile with us. Message us your pictures to enter our raffle 
+          for a free box of cookies! @daugsdesserts
         </p>
       </div>
 
+      <!-- Smile With Us -->
       <div>
         <h4 class="font-semibold mb-4">Smile With Us</h4>
         <ul class="space-y-2 text-sm text-white text-opacity-90">
-          <li><a href="#daily" class="hover:opacity-80 transition-opacity">Cookie Flavors</a></li>
-          <li><a href="#packs" class="hover:opacity-80 transition-opacity">Build Your Box</a></li>
+          <li><a href="#daily" class="hover:opacity-80 transition-opacity">Cookie Boxes & Flavors</a></li>
         </ul>
       </div>
 
+      <!-- Delivery Done Right -->
       <div>
         <h4 class="font-semibold mb-4">Delivery Done Right</h4>
         <ul class="space-y-2 text-sm text-white text-opacity-90">
           <li><a href="#" class="hover:opacity-80 transition-opacity">Our Story</a></li>
           <li><a href="#" class="hover:opacity-80 transition-opacity">Catering</a></li>
           <li><a href="#" class="hover:opacity-80 transition-opacity">Our Blog</a></li>
+        </ul>
       </div>
 
-<div>
-  <h4 class="font-semibold mb-4">
-    <a href="mailto:daugsdessertsmarketing@gmail.com" class="hover:opacity-80 transition-opacity">
-      Contact Us
-    </a>
-  </h4>
+      <!-- Contact + Legal -->
+      <div>
+        <h4 class="font-semibold mb-4">Contact Us</h4>
 
-  <ul class="space-y-2 text-sm text-white text-opacity-90">
-    <li>
-      <a href="contact.html" class="hover:opacity-80 transition-opacity">
-        Contact Us
-      </a>
-    </li>
+        <ul class="space-y-2 text-sm text-white text-opacity-90">
+          <li>
+            <a href="contact.html" class="hover:opacity-80 transition-opacity">
+              Contact Form
+            </a>
+          </li>
 
-        <li>
-      <a href="#" class="hover:opacity-80 transition-opacity">
-        Allergens & Ingredients
-      </a>
-    </li>
-  </ul>
+          <li>
+            <a href="allergens.html" class="hover:opacity-80 transition-opacity">
+              Allergens & Ingredients
+            </a>
+          </li>
 
-    <li>
-      <a href="#" class="hover:opacity-80 transition-opacity">
-        Terms & Conditions
-      </a>
-    </li>
+          <li>
+            <a href="terms-conditions.html" class="hover:opacity-80 transition-opacity">
+              Terms & Conditions
+            </a>
+          </li>
 
-    <li>
-      <a href="#" class="hover:opacity-80 transition-opacity">
-        Privacy Policy
-      </a>
-    </li>
-  </ul>
-</div>
+          <li>
+            <a href="privacy-policy.html" class="hover:opacity-80 transition-opacity">
+              Privacy Policy
+            </a>
+          </li>
+        </ul>
+      </div>
 
+      <!-- Social -->
       <div>
         <h4 class="font-semibold mb-4">Follow Us</h4>
         <ul class="space-y-2 text-sm text-white text-opacity-90">
@@ -420,9 +329,11 @@ We will respond within 48 hours. Talk to you soon!
 
     </div>
 
+    <!-- Footer Bottom -->
     <div class="border-t border-white border-opacity-20 mt-8 pt-8 text-center text-sm text-white text-opacity-90">
       <p>&copy; 2025 Daug's Desserts. All Rights Reserved.</p>
     </div>
 
   </div>
 </footer>
+</html>
