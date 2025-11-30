@@ -102,6 +102,15 @@
 }
 </style>
 
+  <!-- Google tag (gtag.js) — PLACE HERE -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P2Z7098YHT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P2Z7098YHT');
+  </script>
+
 </head>
 <body class="scroll-smooth">
 
@@ -138,6 +147,29 @@
   </div>
 </header>
 
+<!-- MOBILE MENU PANEL -->
+<div id="mobileMenu" class="fixed top-16 left-0 w-full bg-white shadow-lg p-6 hidden z-50">
+  <h3 class="text-lg font-semibold text-brown-800 mb-4">Our Cookies</h3>
+
+  <ul class="space-y-4 text-brown-800 text-base font-medium">
+    <li><a href="chocolate-chip.html" class="hover:text-brand-yellow">Chocolate Chip</a></li>
+    <li><a href="triple-chocolate.html" class="hover:text-brand-yellow">Triple Chocolate</a></li>
+    <li><a href="spicy-oatmeal.html" class="hover:text-brand-yellow">Spicy Oatmeal</a></li>
+    <li><a href="gold-rush-sugar.html" class="hover:text-brand-yellow">Gold Rush Sugar Cookie</a></li>
+    <li><a href="caramel-macchiato.html" class="hover:text-brand-yellow">Caramel Macchiato</a></li>
+    <li><a href="ooey-gooey-butter.html" class="hover:text-brand-yellow">Ooey Gooey Butter</a></li>
+    <li><a href="assorted-box.html" class="hover:text-brand-yellow">Assorted Box</a></li>
+  </ul>
+</div>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('hidden');
+  }
+</script>
+
+
 
    <!-- MENU INDEX -->
   <div class="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
@@ -162,11 +194,10 @@
         and we're looking for the best test subjects. Are you ready to smile with us?
       </p>
 
-      <stripe-buy-button
-        buy-button-id="evt_1SYWH3410SXnfvs5VQb4Pd5O"
-        publishable-key="pk_live_51Rhs5MKFAuivcOklpHhwr9JChp241h9VBAiqVp5gEhoauuW90qghYGRUTGcnsVt2L35LWkkpigcceQHOok08jX0w00dwfmnRpJ"
-      >
-      </stripe-buy-button>
+<stripe-buy-button
+  buy-button-id="plink_1SYWH3410SXnfvs5EMAIYYyT"
+  publishable-key="pk_live_51Rhs5MKFAuivcOklpHhwr9JChp241h9VBAiqVp5gEhoauuW90qghYGRUTGcnsVt2L35LWkkpigcceQHOok08jX0w00dwfmnRpJ">
+</stripe-buy-button>
 
     </div>
   </section>
@@ -280,7 +311,7 @@
       <div class="p-6">
         <h3 class="font-serif text-xl font-semibold text-brown-800 mb-2">BIG COOKIE BOX (36 Cookies)</h3>
         <p class="text-brown-600 leading-relaxed text-sm">
-          The biggest way Daug's Desserts can give you love.
+          The biggest way Daug's Desserts can give you cookies.
         </p>
       </div>
     </div>
