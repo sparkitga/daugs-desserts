@@ -1,138 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daug's Desserts</title>
-
-    <link rel="icon" type="image/png" href="/images/Daug's-Desserts-Favicon.png">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            serif: ['Poppins', 'sans-serif'],
-            sans: ['Inter', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              green: '#3c6e47',
-              yellow: '#f3bb41',
-            },
-            cream: {
-              50: '#fdfcfb',
-              100: '#faf8f5',
-              200: '#f5f1ea',
-              300: '#ebe4d8',
-            },
-            brown: {
-              600: '#8b6f47',
-              700: '#6b5435',
-              800: '#4a3a24',
-            },
-          }
-        }
-      }
-    }
-  </script>
- 
-
-  <!-- Stripe once -->
-  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-
-  <style>
-  /* ORDER NOW BUTTON */
-  .header-buy-btn {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-    display: inline-block;
-  }
-
-  .header-buy-btn:hover {
-    background-color: #f2f2f2 !important;
-  }
-
-  /* CENTER LOGO — Playfair only */
-.header-logo {
-  font-family: 'Playfair Display', serif !important;
-  font-weight: 800 !important;
-  text-transform: lowercase;
-  letter-spacing: -0.5px;
-}
-  /* MENU BUTTON + NAV LINKS */
-  .menu-index-link,
-  .hamburger span,
-  header button span {
-    font-family: 'Poppins', sans-serif !important;
-    font-weight: 800;
-  }
-
-  /* Hamburger bar styling (optional clean) */
-  .hamburger span {
-    display: block;
-    width: 18px;
-    height: 2px;
-    margin: 3px 0;
-    background: white;
-    border-radius: 2px;
-  }
-</style>
-
-<style>
-.doughnut-card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.group:hover .doughnut-card {
-  transform: scale(1.05);
-  box-shadow: 0 12px 22px rgba(0,0,0,0.08);
-}
-</style>
-
-  <!-- Google tag (gtag.js) — PLACE HERE -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P2Z7098YHT"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-P2Z7098YHT');
-  </script>
-
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P2Z7098YHT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-P2Z7098YHT');
-</script>
-
-</head>
-<body class="scroll-smooth">
-
-  <!-- HEADER -->
-<header class="sticky top-0 z-50 bg-brand-green">
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-brand-green shadow-md">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="relative flex items-center justify-between h-16">
 
-      <!-- Left: Hamburger Menu -->
-      <button class="flex items-center gap-2 text-white hover:opacity-80 transition-opacity">
+      <!-- Hamburger Menu -->
+      <button 
+        onclick="toggleMenu()" 
+        class="flex items-center gap-2 text-white hover:opacity-80 transition-opacity"
+      >
         <div class="hamburger">
           <span></span>
           <span></span>
@@ -141,13 +16,15 @@
         <span class="text-sm font-bold font-sans">Menu</span>
       </button>
 
-      <!-- Center Logo (Playfair only) -->
-<a href="index.html"
-   class="header-logo absolute left-1/2 -translate-x-1/2 text-2xl text-white">
-  Daug's Desserts
-</a>
+      <!-- Center Logo -->
+      <a 
+        href="index.html"
+        class="header-logo absolute left-1/2 -translate-x-1/2 text-2xl text-white"
+      >
+        Daug's Desserts
+      </a>
 
-      <!-- Right: Order Now -->
+      <!-- Order Now Button -->
       <a 
         href="https://buy.stripe.com/eVqeV6c9h2m48sF0I56sw07"
         class="header-buy-btn text-sm font-medium"
@@ -159,265 +36,83 @@
   </div>
 </header>
 
-<!-- MOBILE MENU PANEL -->
-<div id="mobileMenu" class="fixed top-16 left-0 w-full bg-white shadow-lg p-6 hidden z-50">
+<!-- MOBILE SLIDE + FADE MENU -->
+<div 
+  id="mobileMenu"
+  class="fixed top-16 left-0 w-full bg-white shadow-lg p-6 hidden opacity-0 -translate-y-4 
+         transition-all duration-300 z-50"
+>
   <h3 class="text-lg font-semibold text-brown-800 mb-4">Our Cookies</h3>
 
   <ul class="space-y-4 text-brown-800 text-base font-medium">
-    <li><a href="chocolate-chip.html" class="hover:text-brand-yellow">Chocolate Chip</a></li>
-    <li><a href="triple-chocolate.html" class="hover:text-brand-yellow">Triple Chocolate</a></li>
-    <li><a href="spicy-oatmeal.html" class="hover:text-brand-yellow">Spicy Oatmeal</a></li>
-    <li><a href="gold-rush-sugar.html" class="hover:text-brand-yellow">Gold Rush Sugar Cookie</a></li>
-    <li><a href="caramel-macchiato.html" class="hover:text-brand-yellow">Caramel Macchiato</a></li>
-    <li><a href="ooey-gooey-butter.html" class="hover:text-brand-yellow">Ooey Gooey Butter</a></li>
-    <li><a href="assorted-box.html" class="hover:text-brand-yellow">Assorted Box</a></li>
+    <li><a onclick="closeMenu()" href="chocolate-chip.html" class="hover:text-brand-yellow">Chocolate Chip</a></li>
+    <li><a onclick="closeMenu()" href="triple-chocolate.html" class="hover:text-brand-yellow">Triple Chocolate</a></li>
+    <li><a onclick="closeMenu()" href="spicy-oatmeal.html" class="hover:text-brand-yellow">Spicy Oatmeal</a></li>
+    <li><a onclick="closeMenu()" href="gold-rush-sugar-cookie.html" class="hover:text-brand-yellow">Gold Rush Sugar Cookie</a></li>
+    <li><a onclick="closeMenu()" href="caramel-macchiato.html" class="hover:text-brand-yellow">Caramel Macchiato</a></li>
+    <li><a onclick="closeMenu()" href="ooey-gooey-butter.html" class="hover:text-brand-yellow">Ooey Gooey Butter</a></li>
+    <li><a onclick="closeMenu()" href="assorted-box.html" class="hover:text-brand-yellow">Assorted Box</a></li>
   </ul>
 </div>
 
+<!-- NAVBAR WITH SMOOTH DROPDOWN -->
+<div class="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <nav class="flex items-center gap-8 py-4 relative">
+
+      <!-- DROPDOWN TRIGGER -->
+      <div class="group relative">
+        <button class="menu-index-link text-sm font-medium text-gray-700 hover:text-brand-yellow">
+          Cookie Boxes & Flavors
+        </button>
+
+        <!-- Smooth Dropdown -->
+        <div 
+          class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg border border-gray-200 
+                 opacity-0 invisible translate-y-2 
+                 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
+                 transition-all duration-300 z-50"
+        >
+          <ul class="py-3 text-sm text-gray-700">
+            <li><a href="chocolate-chip.html" class="block px-4 py-2 hover:bg-cream-100">Chocolate Chip</a></li>
+            <li><a href="triple-chocolate.html" class="block px-4 py-2 hover:bg-cream-100">Triple Chocolate</a></li>
+            <li><a href="spicy-oatmeal.html" class="block px-4 py-2 hover:bg-cream-100">Spicy Oatmeal</a></li>
+            <li><a href="gold-rush-sugar-cookie.html" class="block px-4 py-2 hover:bg-cream-100">Gold Rush Sugar Cookie</a></li>
+            <li><a href="caramel-macchiato.html" class="block px-4 py-2 hover:bg-cream-100">Caramel Macchiato</a></li>
+            <li><a href="ooey-gooey-butter.html" class="block px-4 py-2 hover:bg-cream-100">Ooey Gooey Butter</a></li>
+            <li><a href="assorted-box.html" class="block px-4 py-2 hover:bg-cream-100">Assorted Box</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </nav>
+
+  </div>
+</div>
+
+<!-- MENU SCRIPT -->
 <script>
   function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('hidden');
+
+    if (menu.classList.contains('hidden')) {
+      menu.classList.remove('hidden');
+      setTimeout(() => {
+        menu.classList.remove('opacity-0', '-translate-y-4');
+        menu.classList.add('opacity-100', 'translate-y-0');
+      }, 10);
+    } else {
+      menu.classList.add('opacity-0', '-translate-y-4');
+      menu.classList.remove('opacity-100', 'translate-y-0');
+      setTimeout(() => menu.classList.add('hidden'), 250);
+    }
+  }
+
+  function closeMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.add('opacity-0', '-translate-y-4');
+    menu.classList.remove('opacity-100', 'translate-y-0');
+    setTimeout(() => menu.classList.add('hidden'), 250);
   }
 </script>
-
-
-
-   <!-- MENU INDEX -->
-  <div class="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <nav class="flex gap-8 py-4 overflow-x-auto">
-        <a href="#packs" class="menu-index-link text-sm font-medium text-gray-700 hover:text-brand-yellow whitespace-nowrap">
-          Cookie Boxes & Flavors
-        </a>
-      </nav>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <section class="bg-gradient-to-b from-cream-100 to-cream-50 py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-serif text-5xl md:text-6xl font-bold text-brown-800 mb-4">
-        Click and Cookie
-      </h2>
-
-      <p class="text-lg text-brown-600 max-w-2xl mx-auto leading-relaxed mb-8">
-        We're proving that cookies make the world a happier place 
-        and we're looking for the best test subjects. Are you ready to smile with us?
-      </p>
-
-<a 
-  href="https://buy.stripe.com/eVqeV6c9h2m48sF0I56sw07"
-  class="inline-block px-6 py-3 rounded-md font-semibold bg-brand-yellow text-white hover:opacity-90 transition"
->
-  Order Now
-</a>
-
-
-    </div>
-  </section>
-
-<!-- Daily Flavors Section -->
-<section id="daily" class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <div class="text-center mb-12">
-      <h2 class="font-serif text-4xl font-bold text-brown-800 mb-3">Our Cookies</h2>
-      <p class="text-brown-600 text-lg">Taste Our Passion with Every Box!</p>
-    </div>
-
-   <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-  <!-- Classic Chocolate Chip -->
-  <a href="chocolate_Chip_Page.html" class="group block rounded-xl overflow-hidden">
-    <div class="doughnut-card bg-cream-50 rounded-xl overflow-hidden">
-      <img src="/images/Chocolate_Chip.webp" alt="Classic Chocolate Chip" class="w-full aspect-square object-cover">
-      <div class="p-6">
-        <h3 class="font-serif text-xl font-semibold text-brown-800 mb-2">CHOCOLATE CHIP</h3>
-        <p class="text-brown-600 leading-relaxed text-sm">
-          The timeless favorite with premium chocolate chips
-        </p>
-      </div>
-    </div>
-  </a>
-
-  <!-- Triple Chocolate -->
-  <a href="Triple_Chocolate_Page.html" class="group block rounded-xl overflow-hidden">
-    <div class="doughnut-card bg-cream-50 rounded-xl overflow-hidden">
-      <img src="/images/Triple_Chocolate.webp" alt="Triple Chocolate" class="w-full aspect-square object-cover">
-      <div class="p-6">
-        <h3 class="font-serif text-xl font-semibold text-brown-800 mb-2">TRIPLE CHOCOLATE</h3>
-        <p class="text-brown-600 leading-relaxed text-sm">
-          Rich chocolate cookie with white and dark chocolate chunks
-        </p>
-      </div>
-    </div>
-  </a>
-
-  <!-- Spicy Oatmeal -->
-  <a href="spicy-oatmeal.html" class="group block rounded-xl overflow-hidden">
-    <div class="doughnut-card bg-cream-50 rounded-xl overflow-hidden">
-      <img src="/images/Spicy_Oatmeal.webp" alt="Spicy Oatmeal" class="w-full aspect-square object-cover">
-      <div class="p-6">
-        <h3 class="font-serif text-xl font-semibold text-brown-800 mb-2">SPICY OATMEAL</h3>
-        <p class="text-brown-600 leading-relaxed text-sm">
-          Hearty oats with a kick of cinnamon and cayenne
-        </p>
-      </div>
-    </div>
-  </a>
-
-  <!-- Gold Rush -->
-  <a href="gold-rush-sugar-cookie.html" class="group block rounded-xl overflow-hidden">
-    <div class="doughnut-card bg-cream-50 rounded-xl overflow-hidden">
-      <img src="/images/Gold_Rush.webp" alt="Gold Rush" class="w-full aspect-square object-cover">
-      <div class="p-6">
-        <h3 class="font-serif text-xl font-semibold text-brown-800 mb-2">GOLD RUSH</h3>
-        <p class="text-brown-600 leading-relaxed text-sm">
-          Our classic sugar cookie with a delicate vanilla flavor
-        </p>
-      </div>
-    </div>
-  </a>
-
-  <!-- Caramel Macchiato -->
-  <a href="CARAMEL MACCHIATO.html" class="group block rounded-xl overflow-hidden">
-    <div class="doughnut-card bg-cream-50 rounded-xl overflow-hidden">
-      <img src="/images/Caramel_Macchiato.webp" alt="Caramel Macchiato" class="w-full aspect-square object-cover">
-      <div class="p-6">
-        <h3 class="font-serif text-xl font-semibold text-brown-800 mb-2">CARAMEL MACCHIATO</h3>
-        <p class="text-brown-600 leading-relaxed text-sm">
-          Espresso-infused cookie with caramel drizzle
-        </p>
-      </div>
-    </div>
-  </a>
-
-  <!-- Ooey Gooey Butter -->
-  <a href="OOEY GOOEY BUTTER.html" class="group block rounded-xl overflow-hidden">
-    <div class="doughnut-card bg-cream-50 rounded-xl overflow-hidden">
-      <img src="/images/Ooey_Gooey.webp" alt="Ooey Gooey Butter" class="w-full aspect-square object-cover">
-      <div class="p-6">
-        <h3 class="font-serif text-xl font-semibold text-brown-800 mb-2">OOEY GOOEY BUTTER</h3>
-        <p class="text-brown-600 leading-relaxed text-sm">
-          Warm cookie with a molten chocolate center
-        </p>
-      </div>
-    </div>
-  </a>
-
-  <!-- The Chocolate Experience -->
-  <a href="Custom Choice Box.html" class="group block rounded-xl overflow-hidden">
-    <div class="doughnut-card bg-cream-50 rounded-xl overflow-hidden">
-      <img src="/images/Chocolate_Experience_Cookie_Box.webp" alt="Custom Choice Box - Dozen Cookies" class="w-full aspect-square object-cover">
-      <div class="p-6">
-        <h3 class="font-serif text-xl font-semibold text-brown-800 mb-2">Custom Choice Box</h3>
-        <p class="text-brown-600 leading-relaxed text-sm">
-          Create the perfect box for your family!
-        </p>
-      </div>
-    </div>
-  </a>
-
-  <!-- Big Cookie Box (36) -->
-  <a href="BIG BOX.html" class="group block rounded-xl overflow-hidden">
-    <div class="doughnut-card bg-cream-50 rounded-xl overflow-hidden">
-      <img src="/images/36_Assorted_Cookie_Box.webp" alt="36 Assorted Cookie Box" class="w-full aspect-square object-cover">
-      <div class="p-6">
-        <h3 class="font-serif text-xl font-semibold text-brown-800 mb-2">BIG COOKIE BOX (36 Cookies)</h3>
-        <p class="text-brown-600 leading-relaxed text-sm">
-          The biggest way Daug's Desserts can give you cookies.
-        </p>
-      </div>
-    </div>
-  </a>
-
-</div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- Footer -->
-<footer class="text-cream-100 py-12 bg-black border-t-2" style="border-color:#f3bb41;">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-12">
-
-      <!-- Brand Section -->
-      <div>
-        <h3 class="font-serif text-2xl font-bold mb-4">Daug's Desserts</h3>
-        <p class="text-white text-opacity-90 text-sm leading-relaxed">
-          We love seeing you smile with us. Message us your pictures to enter our raffle 
-          for a free box of cookies! @daugsdesserts
-        </p>
-      </div>
-
-      <!-- Smile With Us -->
-      <div>
-        <h4 class="font-semibold mb-4">Smile With Us</h4>
-        <ul class="space-y-2 text-sm text-white text-opacity-90">
-          <li><a href="#daily" class="hover:opacity-80 transition-opacity">Cookie Boxes & Flavors</a></li>
-        </ul>
-      </div>
-
-      <!-- Delivery Done Right -->
-      <div>
-        <h4 class="font-semibold mb-4">Delivery Done Right</h4>
-        <ul class="space-y-2 text-sm text-white text-opacity-90">
-          <li><a href="our-story.html" class="hover:opacity-80 transition-opacity">Our Story</a></li>
-          <li><a href="#" class="hover:opacity-80 transition-opacity">Our Blog</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact + Legal -->
-      <div>
-        <h4 class="font-semibold mb-4">Contact Us</h4>
-
-        <ul class="space-y-2 text-sm text-white text-opacity-90">
-          <li>
-            <a href="contact.html" class="hover:opacity-80 transition-opacity">
-              Contact Form
-            </a>
-          </li>
-
-          <li>
-            <a href="allergens.html" class="hover:opacity-80 transition-opacity">
-              Allergens & Ingredients
-            </a>
-          </li>
-
-          <li>
-            <a href="terms-conditions.html" class="hover:opacity-80 transition-opacity">
-              Terms & Conditions
-            </a>
-          </li>
-
-          <li>
-            <a href="privacy-policy.html" class="hover:opacity-80 transition-opacity">
-              Privacy Policy
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Social -->
-      <div>
-        <h4 class="font-semibold mb-4">Follow Us</h4>
-        <ul class="space-y-2 text-sm text-white text-opacity-90">
-          <li><a href="https://www.instagram.com/daugsdesserts/" class="hover:opacity-80 transition-opacity">Instagram</a></li>
-          <li><a href="https://www.facebook.com/profile.php?id=61575046289470" class="hover:opacity-80 transition-opacity">Facebook</a></li>
-        </ul>
-      </div>
-
-    </div>
-
-    <!-- Footer Bottom -->
-    <div class="border-t border-white border-opacity-20 mt-8 pt-8 text-center text-sm text-white text-opacity-90">
-      <p>&copy; 2025 Daug's Desserts. All Rights Reserved.</p>
-    </div>
-
-  </div>
-</footer>
-
