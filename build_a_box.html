@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Build Your Box • Daug's Desserts</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Poppins', 'sans-serif'],
+            sans: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              green: '#3c6e47',
+              yellow: '#f3bb41',
+            },
+            cream: {
+              50: '#fdfcfb',
+              100: '#faf8f5',
+            },
+            brown: {
+              700: '#6b5435',
+              800: '#4a3a24',
+            },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .header-buy-btn { background:#fff!important; color:#000!important; padding:8px 16px; border-radius:6px; font-family:'Poppins',sans-serif; font-weight:800; display:inline-block; }
+    .header-logo { font-family:'Playfair Display',serif!important; font-weight:800!important; text-transform:lowercase; letter-spacing:-0.5px; }
+    .hamburger span { display:block; width:18px; height:2px; margin:3px 0; background:white; border-radius:2px; }
+  </style>
+</head>
+
+<body class="scroll-smooth bg-cream-50">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-brand-green">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between h-16">
+      <button class="flex items-center gap-2 text-white hover:opacity-80 transition-opacity">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+        <span class="text-sm font-bold font-sans">Menu</span>
+      </button>
+
+      <a href="index.html" class="header-logo absolute left-1/2 -translate-x-1/2 text-2xl text-white">
+        Daug's Desserts
+      </a>
+
+      <a href="index.html#packs" class="header-buy-btn text-sm font-medium">Order Now</a>
+    </div>
+  </div>
+</header>
+
+<!-- MENU INDEX -->
+<div class="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="flex gap-8 py-4 overflow-x-auto">
+      <a href="index.html#packs" class="text-sm font-medium text-gray-700 hover:text-brand-yellow whitespace-nowrap">Cookie Boxes</a>
+      <a href="index.html#daily" class="text-sm font-medium text-gray-700 hover:text-brand-yellow whitespace-nowrap">Our Cookies</a>
+      <a href="build_a_box.html" class="text-sm font-bold text-brand-green whitespace-nowrap">Build Your Box</a>
+    </nav>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="py-16 bg-cream-100 border-b border-cream-300">
+  <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="bg-white rounded-2xl shadow-lg p-8">
+      <h1 class="font-serif text-5xl font-bold text-brown-800 mb-4">Build Your Box</h1>
+      <p class="text-brown-700 text-lg leading-relaxed mb-6">
+        Draft your dream lineup. Hit the exact count. Then checkout.
+      </p>
+
+      <div class="flex flex-col gap-3">
+        <label class="text-brown-700 font-semibold">Choose Box Size</label>
+        <select id="boxType" class="w-full p-3 rounded-lg border border-cream-300 focus:outline-none focus:ring-2 focus:ring-brand-yellow">
+          <option value="dozen" selected>Dozen (12) — $24</option>
+          <option value="six">Half-Dozen (6) — $14</option>
+          <option value="big">Big Box (24) — $70</option>
+        </select>
+
+        <div class="mt-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="font-bold text-brown-800" id="counter">0/12 selected</span>
+            <span class="text-sm text-brown-700" id="status">Pick 12 to unlock checkout.</span>
+          </div>
+          <div class="w-full
