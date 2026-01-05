@@ -123,7 +123,6 @@
   <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
 
     <div>
-      <!-- Swap image as you want -->
       <img src="/images/Chocolate_Chip.webp" alt="Feast for Friends Box"
            class="rounded-2xl shadow-lg w-full">
       <p class="text-xs text-gray-500 mt-3">
@@ -304,9 +303,7 @@
   const MAX_COOKIES = 36;
   const WORKER_ENDPOINT = "https://daugs-stripe-backend.daugsdessertsmarketing.workers.dev/create-feast-checkout-session";
 
-  // Edit this list to match your real flavors + images
-  // image can be null if you don't have it yet
-    const COOKIES = [
+  const COOKIES = [
     { name: "Chocolate Chip", desc: "Classic. Soft-baked. Premium chips." },
     { name: "Gold Rush Sugar Cookie", desc: "Golden sweetness. Crowd favorite." },
     { name: "Triple Chocolate", desc: "Deep cocoa. Big mood." },
@@ -317,7 +314,7 @@
 
   // ---------------- STATE ----------------
   const selection = {};
-  COOKIES.forEach(f => selection[f.name] = 0);
+  COOKIES.forEach(c => selection[c.name] = 0);
 
   // ---------------- UI REFS ----------------
   const grid = document.getElementById("flavorGrid");
@@ -358,33 +355,37 @@
   function renderGrid() {
     grid.innerHTML = "";
 
-    COOKIES.forEach(flavor => {
-      const qty = selection[flavor.name];
+    COOKIES.forEach(cookie => {
+      const qty = selection[cookie.name];
 
       const card = document.createElement("div");
-      card.className = "bg-white rounded-2xl shadow-sm border p-5 flex gap-4";
+      card.className = "bg-white rounded-2xl shadow-sm border p-5";
 
-      const img = document.createElement("div");
-      img.className = "w-20 h-20 rounded-xl bg-cream-100 overflow-hidden flex items-center justify-center border";
-      img.innerHTML = flavor.image
-        ? `<img src="${flavor.image}" alt="${flavor.name}" class="w-full h-full object-cover">`
-        : `<span class="text-xs text-gray-400 font-semibold">No image</span>`;
+      const top = document.createElement("div");
+      top.className = "flex items-start justify-between gap-4";
 
-      const info = document.createElement("div");
-      info.className = "flex-1";
+      const text = document.createElement("div");
+      text.className = "min-w-0";
 
       const title = document.createElement("div");
       title.className = "font-extrabold text-brown-800 text-lg";
-      title.textContent = flavor.name;
+      title.textContent = cookie.name;
+
+      const desc = document.createElement("div");
+      desc.className = "text-sm text-brown-700 mt-1 leading-snug";
+      desc.textContent = cookie.desc || "";
+
+      text.appendChild(title);
+      text.appendChild(desc);
 
       const controls = document.createElement("div");
-      controls.className = "mt-3 flex items-center gap-3";
+      controls.className = "flex items-center gap-3 shrink-0";
 
       const minus = document.createElement("button");
       minus.className = "qty-btn bg-white hover:bg-gray-50";
       minus.textContent = "–";
       minus.onclick = () => {
-        if (selection[flavor.name] > 0) selection[flavor.name]--;
+        if (selection[cookie.name] > 0) selection[cookie.name]--;
         renderGrid();
         updateSummary();
       };
@@ -397,7 +398,7 @@
       plus.className = "qty-btn bg-white hover:bg-gray-50";
       plus.textContent = "+";
       plus.onclick = () => {
-        if (totalSelected() < MAX_COOKIES) selection[flavor.name]++;
+        if (totalSelected() < MAX_COOKIES) selection[cookie.name]++;
         renderGrid();
         updateSummary();
       };
@@ -406,11 +407,10 @@
       controls.appendChild(count);
       controls.appendChild(plus);
 
-      info.appendChild(title);
-      info.appendChild(controls);
+      top.appendChild(text);
+      top.appendChild(controls);
 
-      card.appendChild(img);
-      card.appendChild(info);
+      card.appendChild(top);
 
       grid.appendChild(card);
     });
@@ -425,14 +425,12 @@
   });
 
   document.getElementById("fillBtn").addEventListener("click", () => {
-    // Even split as much as possible across flavors
     Object.keys(selection).forEach(k => selection[k] = 0);
     hideMessages();
 
     const names = Object.keys(selection);
     let remaining = MAX_COOKIES;
 
-    // Round-robin fill
     let i = 0;
     while (remaining > 0) {
       selection[names[i % names.length]]++;
@@ -485,7 +483,6 @@
 
       const data = await resp.json().catch(() => ({}));
       if (!resp.ok) throw new Error(data.error || "Checkout error");
-
       if (!data.url) throw new Error("No checkout URL returned.");
 
       window.location.href = data.url;
