@@ -253,6 +253,61 @@
 </footer>
 
 <script>
+  const API_BASE = "https://daugs-stripe-backend.daugsdessertsmarketing.workers.dev";
+
+  function getSelectionFromUI() {
+    // TODO: Replace with your real UI logic
+    // Return an object like: { "Chocolate Chip": 4, "Triple Chocolate": 8 }
+    const selection = {};
+    document.querySelectorAll("[data-cookie-name]").forEach((row) => {
+      const name = row.getAttribute("data-cookie-name");
+      const qty = parseInt(row.querySelector("input").value || "0", 10);
+      if (qty > 0) selection[name] = qty;
+    });
+    return selection;
+  }
+
+  function sumSelection(selection) {
+    return Object.values(selection).reduce((a, b) => a + b, 0);
+  }
+
+  async function startCheckout() {
+    const selection = getSelectionFromUI();
+    const total = sumSelection(selection);
+
+    if (total !== 12) {
+      alert(`Your box must be exactly 12 cookies. You currently have ${total}.`);
+      return;
+    }
+
+    const giftNote = {
+      to: document.querySelector('[name="to"]')?.value || "",
+      from: document.querySelector('[name="from"]')?.value || "",
+      message: document.querySelector('[name="message"]')?.value || "",
+    };
+
+    const res = await fetch(`${API_BASE}/create-checkout-session`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ selection, giftNote }),
+    });
+
+    const data = await res.json();
+    if (!res.ok) {
+      alert(data.error || "Checkout error.");
+      return;
+    }
+
+    window.location.href = data.url; // redirect to Stripe Checkout
+  }
+</script>
+
+<button onclick="startCheckout()" class="px-6 py-3 rounded-md font-semibold bg-brand-yellow text-white">
+  Checkout
+</button>
+
+
+<script>
   // ✅ Your Cloudflare Worker endpoint
   const API_CREATE_SESSION_URL =
     "https://daugs-stripe-backend.daugsdessertsmarketing.workers.dev/create-checkout-session";
