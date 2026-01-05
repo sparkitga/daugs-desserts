@@ -317,7 +317,7 @@
 
   // ---------------- STATE ----------------
   const selection = {};
-  FLAVORS.forEach(f => selection[f.name] = 0);
+  COOKIES.forEach(f => selection[f.name] = 0);
 
   // ---------------- UI REFS ----------------
   const grid = document.getElementById("flavorGrid");
@@ -358,7 +358,7 @@
   function renderGrid() {
     grid.innerHTML = "";
 
-    FLAVORS.forEach(flavor => {
+    COOKIES.forEach(flavor => {
       const qty = selection[flavor.name];
 
       const card = document.createElement("div");
