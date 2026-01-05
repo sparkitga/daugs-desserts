@@ -3,19 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Chocolate Chip Cookie Box • 12 Cookies</title>
+  <title>Chocolate Chip Cookie Box • 12 Cookies</title>
 
-<!-- Google Tag Manager -->
-<script>
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K9NC5DPG');
-</script>
-<!-- End Google Tag Manager -->
-
-
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K9NC5DPG');
+  </script>
+  <!-- End Google Tag Manager -->
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
@@ -51,9 +49,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
   </script>
 
-  <!-- Stripe -->
-  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-
   <style>
     .header-buy-btn {
       background-color: #ffffff !important;
@@ -67,13 +62,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .header-buy-btn:hover {
       background-color: #f2f2f2 !important;
     }
-.header-logo {
-  font-family: 'Playfair Display', serif !important;
-  font-weight: 800 !important;
-  text-transform: lowercase;
-  letter-spacing: -0.5px;
-}
-
+    .header-logo {
+      font-family: 'Playfair Display', serif !important;
+      font-weight: 800 !important;
+      text-transform: lowercase;
+      letter-spacing: -0.5px;
+    }
     .hamburger span {
       display: block;
       width: 18px;
@@ -82,15 +76,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       background: white;
       border-radius: 2px;
     }
-    /* Modal */
     .modal-bg {
       background: rgba(0,0,0,0.55);
     }
   </style>
 </head>
-<body class="scroll-smooth bg-cream-50">
 
-  <body>
+<body class="scroll-smooth bg-cream-50">
 
 <!-- Google Tag Manager (noscript) -->
 <noscript>
@@ -99,8 +91,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
 
+<script>
+  // ✅ Single source of truth for checkout
+  const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/7sY6oA8X51i04cpeyV6sw00";
+</script>
 
-<!-- GLOBAL HEADER (MATCHES HOME PAGE) -->
+<!-- GLOBAL HEADER -->
 <header class="sticky top-0 z-50 bg-brand-green">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="relative flex items-center justify-between h-16">
@@ -108,25 +104,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <!-- Left: Hamburger -->
       <button class="flex items-center gap-2 text-white hover:opacity-80 transition-opacity">
         <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </div>
         <span class="text-sm font-bold font-sans">Menu</span>
       </button>
 
       <!-- Center Logo -->
-<a href="index.html"
-   class="header-logo absolute left-1/2 -translate-x-1/2 text-2xl text-white">
-  Daug's Desserts
-</a>
+      <a href="index.html"
+         class="header-logo absolute left-1/2 -translate-x-1/2 text-2xl text-white">
+        Daug's Desserts
+      </a>
 
-
-      <!-- Right: Order Now -->
-      <a 
-        href="/#packs"
-        class="header-buy-btn text-sm font-medium"
-      >
+      <!-- Right: Order Now (OPTIONAL: point directly to the payment link) -->
+      <a href="https://buy.stripe.com/7sY6oA8X51i04cpeyV6sw00"
+         class="header-buy-btn text-sm font-medium">
         Order Now
       </a>
 
@@ -134,7 +125,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
 </header>
 
-<!-- MENU INDEX (MATCHES HOME PAGE) -->
+<!-- MENU INDEX -->
 <div class="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <nav class="flex gap-8 py-4 overflow-x-auto">
@@ -147,7 +138,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </nav>
   </div>
 </div>
-
 
 <!-- HERO SECTION -->
 <section class="py-16 bg-cream-100 border-b border-cream-300">
@@ -175,19 +165,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           Allergens & Ingredients
         </button>
 
-        <!-- Order Button -->
-<!-- Styled Order Button Wrapper -->
-<a href="https://buy.stripe.com/7sY6oA8X51i04cpeyV6sw00"
-   class="px-6 py-3 rounded-md font-semibold bg-brand-yellow text-white hover:opacity-90 transition inline-block">
-  Order This Box
-</a>
-
+        <!-- Order Button (locked to 1 payment link) -->
+        <a id="orderLink"
+           href="https://buy.stripe.com/7sY6oA8X51i04cpeyV6sw00"
+           class="px-6 py-3 rounded-md font-semibold bg-brand-yellow text-white hover:opacity-90 transition inline-block">
+          Order This Box
+        </a>
 
       </div>
     </div>
   </div>
 </section>
-
 
 <!-- MODAL -->
 <div id="allergenModal" class="fixed inset-0 modal-bg hidden items-center justify-center z-50">
@@ -195,19 +183,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <button id="closeAllergens" class="absolute top-3 right-4 text-gray-500 text-2xl">&times;</button>
 
-<h2 class="font-serif text-3xl font-bold text-brown-800 mb-4">
-  Allergens & Ingredients
-</h2>
+    <h2 class="font-serif text-3xl font-bold text-brown-800 mb-4">
+      Allergens & Ingredients
+    </h2>
 
-<p class="text-brown-700 leading-relaxed mb-2">
-  <strong>Contains:</strong> Wheat, Eggs, Milk, Soy
-</p>
+    <p class="text-brown-700 leading-relaxed mb-2">
+      <strong>Contains:</strong> Wheat, Eggs, Milk, Soy
+    </p>
 
-<p class="text-brown-700 leading-relaxed">
-  <strong>Ingredients:</strong>
-  Flour, Baking Soda, Salt, Sugar, Invert Sugar, Butter, Eggs, Vanilla,
-  Chocolate Chips.
-</p>
+    <p class="text-brown-700 leading-relaxed">
+      <strong>Ingredients:</strong>
+      Flour, Baking Soda, Salt, Sugar, Invert Sugar, Butter, Eggs, Vanilla,
+      Chocolate Chips.
+    </p>
 
   </div>
 </div>
@@ -228,19 +216,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       <div>
         <label class="block text-brown-700 font-medium mb-1">To:</label>
-        <input type="text" name="to" required
+        <input id="toField" type="text" name="to" required
                class="w-full p-3 rounded-lg border border-cream-300 focus:outline-none focus:ring-2 focus:ring-brand-yellow">
       </div>
 
       <div>
         <label class="block text-brown-700 font-medium mb-1">From:</label>
-        <input type="text" name="from" required
+        <input id="fromField" type="text" name="from" required
                class="w-full p-3 rounded-lg border border-cream-300 focus:outline-none focus:ring-2 focus:ring-brand-yellow">
       </div>
 
       <div>
         <label class="block text-brown-700 font-medium mb-1">Message:</label>
-        <textarea name="message" rows="4" required
+        <textarea id="messageField" name="message" rows="4" required
                   class="w-full p-3 rounded-lg border border-cream-300 focus:outline-none focus:ring-2 focus:ring-brand-yellow"></textarea>
       </div>
 
@@ -249,22 +237,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         Save Note
       </button>
 
-      <p id="noteSuccess" class="hidden text-green-600 font-medium text-center mt-2">
-        Your note has been saved!
-      </p>
-
     </form>
 
   </div>
 </section>
 
-
+<!-- Toast Notification -->
+<div id="toast"
+     class="fixed bottom-6 right-6 bg-brand-green text-white font-semibold px-5 py-3 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300 z-50">
+  Note saved!
+</div>
 
 <!-- Footer -->
 <footer class="text-cream-100 py-12 bg-black border-t-2" style="border-color:#f3bb41;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-<div class="grid grid-cols-1 md:grid-cols-5 gap-12">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-12">
 
       <div>
         <h3 class="font-serif text-2xl font-bold mb-4">Daug's Desserts</h3>
@@ -276,8 +264,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div>
         <h4 class="font-semibold mb-4">Smile With Us</h4>
         <ul class="space-y-2 text-sm text-white text-opacity-90">
-          <li><a href="#daily" class="hover:opacity-80 transition-opacity">Cookie Flavors</a></li>
-          <li><a href="#packs" class="hover:opacity-80 transition-opacity">Build Your Box</a></li>
+          <li><a href="/#daily" class="hover:opacity-80 transition-opacity">Cookie Flavors</a></li>
+          <li><a href="/#packs" class="hover:opacity-80 transition-opacity">Build Your Box</a></li>
         </ul>
       </div>
 
@@ -287,43 +275,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <li><a href="#" class="hover:opacity-80 transition-opacity">Our Story</a></li>
           <li><a href="#" class="hover:opacity-80 transition-opacity">Catering</a></li>
           <li><a href="#" class="hover:opacity-80 transition-opacity">Our Blog</a></li>
+        </ul>
       </div>
 
-<div>
-  <h4 class="font-semibold mb-4">
-    <a href="mailto:daugsdessertsmarketing@gmail.com" class="hover:opacity-80 transition-opacity">
-      Contact Us
-    </a>
-  </h4>
-
-
-  <ul class="space-y-2 text-sm text-white text-opacity-90">
-    <li>
-      <a href="contact.html" class="hover:opacity-80 transition-opacity">
-        Contact Us
-      </a>
-    </li>
-
-        <li>
-      <a href="#" class="hover:opacity-80 transition-opacity">
-        Allergens & Ingredients
-      </a>
-    </li>
-  </ul>
-
-    <li>
-      <a href="#" class="hover:opacity-80 transition-opacity">
-        Terms & Conditions
-      </a>
-    </li>
-
-    <li>
-      <a href="#" class="hover:opacity-80 transition-opacity">
-        Privacy Policy
-      </a>
-    </li>
-  </ul>
-</div>
+      <div>
+        <h4 class="font-semibold mb-4">
+          <a href="mailto:daugsdessertsmarketing@gmail.com" class="hover:opacity-80 transition-opacity">
+            Contact Us
+          </a>
+        </h4>
+        <ul class="space-y-2 text-sm text-white text-opacity-90">
+          <li><a href="contact.html" class="hover:opacity-80 transition-opacity">Contact Us</a></li>
+          <li><a href="#" class="hover:opacity-80 transition-opacity">Allergens & Ingredients</a></li>
+          <li><a href="#" class="hover:opacity-80 transition-opacity">Terms & Conditions</a></li>
+          <li><a href="#" class="hover:opacity-80 transition-opacity">Privacy Policy</a></li>
+        </ul>
+      </div>
 
       <div>
         <h4 class="font-semibold mb-4">Follow Us</h4>
@@ -341,8 +308,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   </div>
 </footer>
-
-
 
 <!-- MODAL SCRIPT -->
 <script>
@@ -369,11 +334,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 
 <script>
+  // ✅ Force the one-and-only payment link (extra safety)
+  document.getElementById("orderLink").href = STRIPE_PAYMENT_LINK;
+
   function showToast() {
     const toast = document.getElementById("toast");
     toast.classList.remove("opacity-0");
     toast.classList.add("opacity-100");
-
     setTimeout(() => {
       toast.classList.add("opacity-0");
       toast.classList.remove("opacity-100");
@@ -395,27 +362,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
 
     showToast();
-
-    // optional: clear form
     document.getElementById("noteForm").reset();
   });
 </script>
-
-
-<!-- Toast Notification -->
-<div id="toast"
-     class="fixed bottom-6 right-6 bg-brand-green text-white font-semibold px-5 py-3 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300 z-50">
-  Note saved!
-</div>
-
-<script>
-  document.getElementById("fakeStripeBtn").addEventListener("click", () => {
-    const real = document.querySelector("https://buy.stripe.com/7sY6oA8X51i04cpeyV6sw00");
-    real.shadowRoot.querySelector("button").click();
-  });
-</script>
-
-
 
 </body>
 </html>
