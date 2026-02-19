@@ -133,4 +133,37 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, button {
   font-family: "Poppins", sans-serif;
 }
 
+/* ==============================
+   Daug’s Desserts — Site Polish
+   (cards, grids, images)
+   ============================== */
+
+/* Card hover: smoother + more premium than scale(1.05) */
+.doughnut-card {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.group:hover .doughnut-card {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.10);
+}
+
+/* Makes cookie photos feel clean + consistent */
+.doughnut-card img {
+  background: #faf8f5;               /* your cream-100 vibe */
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Optional: tighten headings (looks more “brand”) */
+.cookie-title {
+  letter-spacing: 0.02em;
+}
+
+/* Optional: the “Cookie Boxes” section spacing (if you want a divider) */
+.section-divider {
+  margin-top: 3.5rem;
+  padding-top: 3.5rem;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
 
