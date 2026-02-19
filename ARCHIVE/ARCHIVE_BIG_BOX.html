@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Big Cookie Box • 36 Cookies</title>
+
+  <!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K9NC5DPG');
+</script>
+<!-- End Google Tag Manager -->
+
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Poppins', 'sans-serif'],
+            sans: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              green: '#3c6e47',
+              yellow: '#f3bb41',
+            },
+            cream: {
+              50: '#fdfcfb',
+              100: '#faf8f5',
+            },
+            brown: {
+              700: '#6b5435',
+              800: '#4a3a24',
+            },
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Stripe -->
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
+  <style>
+    .header-buy-btn {
+      background-color: #ffffff !important;
+      color: #000000 !important;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      display: inline-block;
+    }
+    .header-buy-btn:hover {
+      background-color: #f2f2f2 !important;
+    }
+
+    .header-logo {
+      font-family: 'Playfair Display', serif !important;
+      font-weight: 800 !important;
+      text-transform: lowercase;
+      letter-spacing: -0.5px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      margin: 3px 0;
+      background: white;
+      border-radius: 2px;
+    }
+
+    .modal-bg {
+      background: rgba(0,0,0,0.55);
+    }
+  </style>
+</head>
+
+<body class="scroll-smooth bg-cream-50">
+
+  <body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9NC5DPG"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- GLOBAL HEADER -->
+<header class="sticky top-0 z-50 bg-brand-green">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between h-16">
+
+      <button class="flex items-center gap-2 text-white hover:opacity-80 transition-opacity">
+        <div class="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+        <span class="text-sm font-bold font-sans">Menu</span>
+      </button>
+
+      <a href="index.html"
+         class="header-logo absolute left-1/2 -translate-x-1/2 text-2xl text-white">
+        Daug's Desserts
+      </a>
+
+      <a href="/#packs" class="header-buy-btn text-sm font-medium">
+        Order Now
+      </a>
+
+    </div>
+  </div>
+</header>
+
+<!-- MENU INDEX -->
+<div class="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="flex gap-8 py-4 overflow-x-auto">
+      <a href="/#packs" class="menu-index-link text-sm font-medium text-gray-700 hover:text-brand-yellow whitespace-nowrap">Cookie Boxes</a>
+      <a href="/#daily" class="menu-index-link text-sm font-medium text-gray-700 hover:text-brand-yellow whitespace-nowrap">Our Cookies</a>
+    </nav>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="py-16 bg-cream-100 border-b border-cream-300">
+  <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+
+    <div>
+      <img src="/images/36_Assorted_Cookie_Box.webp" alt="36 Cookies - Biggest Box Available"
+           class="rounded-2xl shadow-lg w-full">
+    </div>
+
+    <div>
+      <h1 class="font-serif text-5xl font-bold text-brown-800 mb-4">
+        Big Box - 36 Cookies
+      </h1>
+
+      <p class="text-brown-700 text-lg leading-relaxed mb-6">
+        Soft, warm, buttery, and irresistible. A melt-in-your-mouth treat layered with rich sweetness.
+      </p>
+
+      <div class="flex gap-4">
+
+        <button id="openAllergens"
+          class="px-6 py-3 rounded-md font-semibold bg-brand-yellow text-white hover:opacity-90 transition">
+          Allergens & Ingredients
+        </button>
+
+        <!-- Stripe Link -->
+        <a href="https://buy.stripe.com/5kQdR23CL2m4eR3eyV6sw06"
+           class="px-6 py-3 rounded-md font-semibold bg-brand-yellow text-white hover:opacity-90 transition inline-block">
+          Order This Box
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="allergenModal" class="fixed inset-0 modal-bg hidden items-center justify-center z-50">
+  <div class="bg-white max-w-lg w-full mx-4 p-6 rounded-xl shadow-xl relative">
+
+    <button id="closeAllergens" class="absolute top-3 right-4 text-gray-500 text-2xl">&times;</button>
+
+    <h2 class="font-serif text-3xl font-bold text-brown-800 mb-4">Allergens & Ingredients</h2>
+
+    <p class="text-brown-700 leading-relaxed mb-2">
+      <strong>Contains:</strong> Wheat, Eggs, Milk
+    </p>
+
+    <p class="text-brown-700 leading-relaxed">
+      <strong>Ingredients:</strong>
+      Flour, Baking Soda, Salt, Sugar, Invert Sugar,
+      Butter, Eggs, Coffee Extract, Espresso Powder.
+    </p>
+
+  </div>
+</div>
+
+<!-- CUSTOM NOTE -->
+<section class="py-12 bg-cream-50 border-t border-cream-200">
+  <div class="max-w-3xl mx-auto px-4">
+
+    <h2 class="font-serif text-3xl font-bold text-brown-800 mb-4">Add a Custom Note</h2>
+
+    <p class="text-brown-700 mb-6">
+      Personalize your gift — add a note and we’ll include it in your box.
+    </p>
+
+    <form id="noteForm" class="space-y-4">
+
+      <div>
+        <label class="block text-brown-700 font-medium mb-1">To:</label>
+        <input type="text" id="toField" required
+               class="w-full p-3 rounded-lg border border-cream-300 focus:ring-2 focus:ring-brand-yellow" />
+      </div>
+
+      <div>
+        <label class="block text-brown-700 font-medium mb-1">From:</label>
+        <input type="text" id="fromField" required
+               class="w-full p-3 rounded-lg border border-cream-300 focus:ring-2 focus:ring-brand-yellow" />
+      </div>
+
+      <div>
+        <label class="block text-brown-700 font-medium mb-1">Message:</label>
+        <textarea id="messageField" rows="4" required
+                  class="w-full p-3 rounded-lg border border-cream-300 focus:ring-2 focus:ring-brand-yellow"></textarea>
+      </div>
+
+      <button type="submit"
+        class="px-6 py-3 rounded-md font-semibold bg-brand-yellow text-white hover:opacity-90 transition w-full">
+        Save Note
+      </button>
+
+      <p id="noteSuccess" class="hidden text-green-600 font-medium text-center mt-2">
+        Your note has been saved!
+      </p>
+
+    </form>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-cream-100 py-12 bg-black border-t-2" style="border-color:#f3bb41;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-12">
+
+      <div>
+        <h3 class="font-serif text-2xl font-bold mb-4">Daug's Desserts</h3>
+        <p class="text-white text-opacity-90 text-sm leading-relaxed">
+          We love seeing you smile with us. Tag @daugsdesserts to enter our raffle!
+        </p>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-4">Smile With Us</h4>
+        <ul class="space-y-2 text-sm text-white text-opacity-90">
+          <li><a href="/#daily" class="hover:opacity-80 transition-opacity">Cookie Flavors</a></li>
+          <li><a href="/#packs" class="hover:opacity-80 transition-opacity">Build Your Box</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-4">Delivery Done Right</h4>
+        <ul class="space-y-2 text-sm text-white text-opacity-90">
+          <li><a href="#" class="hover:opacity-80 transition-opacity">Our Story</a></li>
+          <li><a href="#" class="hover:opacity-80 transition-opacity">Catering</a></li>
+          <li><a href="#" class="hover:opacity-80 transition-opacity">Our Blog</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-4">Contact Us</h4>
+        <ul class="space-y-2 text-sm text-white text-opacity-90">
+          <li><a href="contact.html" class="hover:opacity-80 transition-opacity">Contact Form</a></li>
+          <li><a href="#" class="hover:opacity-80 transition-opacity">Allergens & Ingredients</a></li>
+          <li><a href="#" class="hover:opacity-80 transition-opacity">Terms & Conditions</a></li>
+          <li><a href="#" class="hover:opacity-80 transition-opacity">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-4">Follow Us</h4>
+        <ul class="space-y-2 text-sm text-white text-opacity-90">
+          <li><a href="https://www.instagram.com/daugsdesserts/" class="hover:opacity-80 transition-opacity">Instagram</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61575046289470" class="hover:opacity-80 transition-opacity">Facebook</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="border-t border-white border-opacity-20 mt-8 pt-8 text-center text-sm text-white text-opacity-90">
+      <p>&copy; 2025 Daug's Desserts. All Rights Reserved.</p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+  const modal = document.getElementById('allergenModal');
+  const openBtn = document.getElementById('openAllergens');
+  const closeBtn = document.getElementById('closeAllergens');
+
+  openBtn.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  });
+</script>
+
+<script>
+  function showToast() {
+    const toast = document.getElementById("toast");
+    toast.classList.remove("opacity-0");
+    toast.classList.add("opacity-100");
+
+    setTimeout(() => {
+      toast.classList.add("opacity-0");
+      toast.classList.remove("opacity-100");
+    }, 2500);
+  }
+
+  document.getElementById("noteForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const to = document.getElementById("toField").value;
+    const from = document.getElementById("fromField").value;
+    const message = document.getElementById("messageField").value;
+
+    await fetch("https://script.google.com/macros/s/AKfycbwtKzXH8E9ostbvHYXeaFwW57o28gG6ZOm67VDH37WB2-BfVGJhB5s7vrFPfgagiaf9/exec", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ to, from, message })
+    });
+
+    showToast();
+    document.getElementById("noteForm").reset();
+  });
+</script>
+
+<div id="toast"
+     class="fixed bottom-6 right-6 bg-brand-green text-white font-semibold px-5 py-3 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300 z-50">
+  Note saved!
+</div>
+
+</body>
+</html>
