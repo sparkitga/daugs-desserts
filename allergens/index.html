@@ -131,27 +131,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="relative flex items-center justify-between h-16">
 
-      <!-- Left: Hamburger Menu -->
-      <button class="flex items-center gap-2 text-white hover:opacity-80 transition-opacity">
+      <!-- Hamburger -->
+      <button onclick="toggleMenu()" class="flex items-center gap-2 text-white hover:opacity-80 transition-opacity" aria-label="Open menu">
         <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </div>
         <span class="text-sm font-bold font-sans">Menu</span>
       </button>
 
-      <!-- Center Logo (Playfair only) -->
-<a href="index.html"
-   class="header-logo absolute left-1/2 -translate-x-1/2 text-2xl text-white">
-  Daug's Desserts
-</a>
+      <!-- Center Logo -->
+      <a href="/" class="header-logo absolute left-1/2 -translate-x-1/2 text-2xl text-white">
+        Daug's Desserts
+      </a>
 
       <!-- Right: Order Now -->
-      <a 
-        href="https://buy.stripe.com/eVqeV6c9h2m48sF0I56sw07"
-        class="header-buy-btn text-sm font-medium"
-      >
+      <a href="https://buy.stripe.com/eVqeV6c9h2m48sF0I56sw07" class="header-buy-btn text-sm font-medium">
         Order Now
       </a>
 
@@ -159,6 +153,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
 </header>
 
+<!-- MOBILE MENU PANEL -->
+<div id="mobileMenu" class="hidden fixed top-16 left-0 w-full bg-white shadow-xl p-6 z-50">
+  <h3 class="text-lg font-semibold text-brown-800 mb-4">Our Cookies</h3>
+
+  <ul class="space-y-4 text-brown-800 text-base font-medium">
+    <li><a href="/Chocolate-Chip/">Chocolate Chip</a></li>
+    <li><a href="/Triple-Chocolate/">Triple Chocolate</a></li>
+    <li><a href="/Spicy-Oatmeal/">Spicy Oatmeal</a></li>
+    <li><a href="/Gold-Rush/">Gold Rush Sugar Cookie</a></li>
+    <li><a href="/Caramel-Macchiato/">Caramel Macchiato</a></li>
+    <li><a href="/Ooey-Gooey-Butter/">Ooey Gooey Butter</a></li>
+    <li><a href="/Hammered-Velvet/">Hammered Velvet</a></li>
+    <li><a href="/Spicy-Little-Number/">Spicy Little Thing</a></li>
+    <li><a href="/Feast-for-Friends/">Feast for Friends</a></li>
+    <li><a href="/build-a-box/">Build A Box</a></li>
+  </ul>
+</div>
 
 <!-- MENU INDEX -->
 <div class="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
@@ -271,3 +282,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   </div>
 </footer>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    if (!menu) return;
+    menu.classList.toggle('hidden');
+  }
+</script>
