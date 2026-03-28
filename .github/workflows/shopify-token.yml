@@ -13,14 +13,18 @@ jobs:
         run: |
           RESPONSE=$(curl -s -X POST "https://${{ secrets.SHOPIFY_STORE }}/admin/oauth/access_token" \
             -H "Content-Type: application/json" \
-            -d '{
-              "client_id": "'"${{ secrets.SHOPIFY_CLIENT_ID }}"'",
-              "client_secret": "'"${{ secrets.SHOPIFY_CLIENT_SECRET }}"'",
-              "grant_type": "client_credentials"
-            }')
+            -d "{\"client_id\":\"${{ secrets.SHOPIFY_CLIENT_ID }}\",\"client_secret\":\"${{ secrets.SHOPIFY_CLIENT_SECRET }}\",\"grant_type\":\"client_credentials\"}")
 
-          echo "response=$RESPONSE"
-          ADMIN_TOKEN=$(echo $RESPONSE | jq -r '.access_token')
+          echo "Raw response:"
+          echo "$RESPONSE"
+
+          ADMIN_TOKEN=$(echo "$RESPONSE" | jq -r '.access_token')
+
+          if [ "$ADMIN_TOKEN" = "null" ] || [ -z "$ADMIN_TOKEN" ]; then
+            echo "Failed to get admin token"
+            exit 1
+          fi
+
           echo "admin_token=$ADMIN_TOKEN" >> $GITHUB_OUTPUT
 
       - name: Create Storefront Token
@@ -28,9 +32,7 @@ jobs:
           STOREFRONT_RESPONSE=$(curl -s -X POST "https://${{ secrets.SHOPIFY_STORE }}/admin/api/2024-01/graphql.json" \
             -H "Content-Type: application/json" \
             -H "X-Shopify-Access-Token: ${{ steps.admin_token.outputs.admin_token }}" \
-            -d '{
-              "query": "mutation { storefrontAccessTokenCreate(input: {title: \"Daugs Frontend\"}) { storefrontAccessToken { accessToken } userErrors { field message } } }"
-            }')
+            -d '{"query":"mutation { storefrontAccessTokenCreate(input: { title: \"Daugs Frontend\" }) { storefrontAccessToken { accessToken } userErrors { field message } } }"}')
 
           echo "Storefront Token Response:"
-          echo $STOREFRONT_RESPONSE
+          echo "$STOREFRONT_RESPONSE"
