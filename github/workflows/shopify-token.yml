@@ -1,0 +1,36 @@
+name: Generate Shopify Storefront Token
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-token:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get Admin Access Token
+        id: admin_token
+        run: |
+          RESPONSE=$(curl -s -X POST "https://${{ secrets.SHOPIFY_STORE }}/admin/oauth/access_token" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "client_id": "'"${{ secrets.SHOPIFY_CLIENT_ID }}"'",
+              "client_secret": "'"${{ secrets.SHOPIFY_CLIENT_SECRET }}"'",
+              "grant_type": "client_credentials"
+            }')
+
+          echo "response=$RESPONSE"
+          ADMIN_TOKEN=$(echo $RESPONSE | jq -r '.access_token')
+          echo "admin_token=$ADMIN_TOKEN" >> $GITHUB_OUTPUT
+
+      - name: Create Storefront Token
+        run: |
+          STOREFRONT_RESPONSE=$(curl -s -X POST "https://${{ secrets.SHOPIFY_STORE }}/admin/api/2024-01/graphql.json" \
+            -H "Content-Type: application/json" \
+            -H "X-Shopify-Access-Token: ${{ steps.admin_token.outputs.admin_token }}" \
+            -d '{
+              "query": "mutation { storefrontAccessTokenCreate(input: {title: \"Daugs Frontend\"}) { storefrontAccessToken { accessToken } userErrors { field message } } }"
+            }')
+
+          echo "Storefront Token Response:"
+          echo $STOREFRONT_RESPONSE
